@@ -212,9 +212,9 @@
     XOR Cipher:
     * $m = 010001101$
     * $c = 111011111$
-
-    $m \oplus c = k$
-    $010001101 \oplus 111011111 = 101010010$
+  
+    * $m \oplus c = k$
+    * $010001101 \oplus 111011111 = 101010010$
 
 45. Warum ist eine Chosen-Plaintext Attack wirkungsvoller?
 
