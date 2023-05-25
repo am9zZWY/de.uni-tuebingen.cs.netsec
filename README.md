@@ -304,25 +304,25 @@
 
     Ein Stream Cipher ist ein PRNG, bei dem der Seed als Schlüssel fungiert und bei dem eine Nachricht $m$ bitweise per XOR-Operation mit dem Keystream $ks$ verschlüsselt wird.
 
-        1. Verschlüsselung: $c(i) = ks(i) \oplus m(i)$.
-        2. Entschlüsselung: $m(i) = ks(i) \oplus c(i)$
+    1. Verschlüsselung: $c(i) = ks(i) \oplus m(i)$.
+    2. Entschlüsselung: $m(i) = ks(i) \oplus c(i)$
 
     Der Schlüssel ist symmetrisch.
 
 16. **Nennen Sie Vorteile von Stream Ciphers!**
 
-        1. Verschlüsselung von einem Bit auf einmal. Das heißt, der Sender kann direkt verschlüsseln, ohne auf ganze Blöcke zu warten, wie es beim Block Cipher der Fall ist. Stream Cipher eignen sich damit für Realzeitanwendungen.
-        2. Singlebit-Fehler im Ciphertext $c$ führen zu Singlebit-Fehlern im Klartext $m$ und können mithilfe der _Forward Error Correction (FEC)_ korrigiert werden.
+    1. Verschlüsselung von einem Bit auf einmal. Das heißt, der Sender kann direkt verschlüsseln, ohne auf ganze Blöcke zu warten, wie es beim Block Cipher der Fall ist. Stream Cipher eignen sich damit für Realzeitanwendungen.
+    2. Singlebit-Fehler im Ciphertext $c$ führen zu Singlebit-Fehlern im Klartext $m$ und können mithilfe der _Forward Error Correction (FEC)_ korrigiert werden.
 
 17. **Wofür steht RC4?**
 
-    \enquote{Ron's Cipher 4} ist ein (Byte-orientierter) Stream Cipher.
+    "Ron's Cipher 4" ist ein (Byte-orientierter) Stream Cipher.
 
 18. **Was ist ein Vorteil von RC4?**
 
-        1. variable Schlüssellänge,
-        2. performant,
-        3. einfacher Algorithmus, der sich damit auch einfach implementieren lässt. Das führt wiederum zur Minimierung von Fehlern bei der Implementierung und der Verminderung von _Side-Channel Attacken_.
+    1. variable Schlüssellänge,
+    2. performant,
+    3. einfacher Algorithmus, der sich damit auch einfach implementieren lässt. Das führt wiederum zur Minimierung von Fehlern bei der Implementierung und der Verminderung von _Side-Channel Attacken_.
 
 19. **Was ist _Key Scheduling_ in RC4? Wie funktioniert es in Grundzügen?**
 
@@ -332,8 +332,8 @@
 
     RC4 besteht aus zwei Schritten:
 
-        1. Key Scheduling: Zustand initialisieren
-        2. Verschlüsselung: Keystream generieren und den Klartext-Stream mit dem Keystream per XOR-Operation verschlüsseln
+    1. Key Scheduling: Zustand initialisieren
+    2. Verschlüsselung: Keystream generieren und den Klartext-Stream mit dem Keystream per XOR-Operation verschlüsseln
 
     Es werden $m$-viele Bits erzeugt, wobei $m$ die Länge der Nachricht, die verschlüsselt werden soll, ist. RC4 baut auf einer Substitutions-Box, kurz _S-Box_. Diese Struktur wird so verändert, dass Buchstaben mit den Indexen $i = (i + 1) (mod 256)$ und $j = (j + S[i]) (mod 256)$ miteinander vertauscht werden.
 
@@ -343,9 +343,9 @@
 
 22. **Wofür wird RC4 verwendet?**
 
-        1. WiFi: WEP, WPA, WPA2
-        2. Microsoft Point-to-Point Encryption Protocol
-        3. Remote Desktop Protocol
+    1. WiFi: WEP, WPA, WPA2
+    2. Microsoft Point-to-Point Encryption Protocol
+    3. Remote Desktop Protocol
 
 23. **Ist die Verwendung von RC4 empfehlenswert?**
 
