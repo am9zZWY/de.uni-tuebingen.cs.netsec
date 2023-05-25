@@ -55,7 +55,7 @@
     * Umgebung: ein Netzwerk, das aus einer bestimmten Anzahl an Teilnehmern besteht. Alle Teilnehmer sind miteinander vernetzt und tauschen Nachrichten aus. Weitere Teilnehmer können zu jedem Zeitpunkt dazukommen und müssen nicht autorisiert sein.
     * Angreifer: der Angreifer ist ein Teilnehmer des Netzwerks, der Nachrichten senden, empfangen, abfangen und manipulieren und als ein anderer Teilnehmer senden kann. Der Angreifer kann nicht die Sicherheit knacken.
 
-    Ein Protokoll kann nach diesem Angreifermodell als sicher betrachtet werden, wenn der Angreifer keine Nachrichten 1.1.unentdeckt1.1. manipulieren kann.
+    Ein Protokoll kann nach diesem Angreifermodell als sicher betrachtet werden, wenn der Angreifer keine Nachrichten _unentdeckt_ manipulieren kann.
 
 11. **Wofür stehen Alice, Bob, Trudy und Eve in der Literatur?**
 
@@ -236,10 +236,10 @@
 
 2. **Was sind symmetrische und asymmetrische Kryptografie?**
 
-    Bei der 1.1.symmetrischen Kryptografie1.1. werden Texte mit einem symmetrischen Schlüssel verschlüsselt. Es kann sich dabei um den gleichen Schlüssel $K$ handeln, mit dem ein Text ver- und wieder entschlüsselt wird, oder, $K_d$ kann aus $K_e$ errechnet werden.
-    Beispiele hierfür sind _One-time Pads}, \textit{Stream Cipher}, \textit{Block Cipher_.
+    Bei der _symmetrischen Kryptografie_ werden Texte mit einem symmetrischen Schlüssel verschlüsselt. Es kann sich dabei um den gleichen Schlüssel $K$ handeln, mit dem ein Text ver- und wieder entschlüsselt wird, oder, $K_d$ kann aus $K_e$ errechnet werden.
+    Beispiele hierfür sind _One-time Pads_, _Stream Cipher_, _Block Cipher_.
 
-    Bei der 1.1.asymmetrischen Kryptografie} gibt es zwei Schlüssel $K_e$ und $K_d$, wobei sich $K_d$ nicht aus $K_e$ errechnen lässt. Meistens ist $K_e$ öffentlich, während der $K_d$ privat bleiben muss, damit die Nachricht nicht von jedem entschlüsselt werden kann. Ein Beispiel hierfür ist \textbf{RSA1.1..
+    Bei der _asymmetrischen Kryptografie_ gibt es zwei Schlüssel $K_e$ und $K_d$, wobei sich $K_d$ nicht aus $K_e$ errechnen lässt. Meistens ist $K_e$ öffentlich, während der $K_d$ privat bleiben muss, damit die Nachricht nicht von jedem entschlüsselt werden kann. Ein Beispiel hierfür ist **RSA**.
 
 3. **Was benötigt symmetrische Kryptografie, ehe sie angewendet werden kann?**
 
@@ -438,7 +438,7 @@
 
     SHA-1 ist eine Merkle-Damgard Konstruktion. Es gibt eine Blockgröße von 512 Bit und hat einen _Message Digest_ von 160 Bit. Der Message Digest ist ein Hash-Output.
 
-    Gegen SHA-1 gibt es die 1.1.Collision-Attack1.1.. Das bedeutet, dass zwei verschiedene Inputs zum selben Output führen.
+    Gegen SHA-1 gibt es die _Collision-Attack_.. Das bedeutet, dass zwei verschiedene Inputs zum selben Output führen.
 
 66. **Was ist ein wesentlicher Unterschied zwischen SHA-1 und SHA-2? Welche Varianten gibt es?**
 
