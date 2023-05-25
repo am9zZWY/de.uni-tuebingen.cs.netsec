@@ -250,9 +250,9 @@
     One-time Pads sind Schlüssel, die unter idealen Bedingungen _Perfect Privacy_  bieten und damit nicht knackbar sind. Mit ihnen werden Nachrichten mittels XOR-Operation verschlüsselt.
     Die Bedingungen für Perfect Privacy sind:
 
-        1. zufälliger Schlüssel $K$
-        2. $len(K) \geq len(m)$
-        3. Schlüssel $K$ darf nur einmal genutzt werden
+     1. zufälliger Schlüssel $K$
+     2. $len(K) \geq len(m)$
+     3. Schlüssel $K$ darf nur einmal genutzt werden
 
 5. **Was sind Stream Ciphers?**
 
@@ -288,13 +288,13 @@
 
 12. **Nennen Sie einen bekannten Polyalphabetic Cipher!**
 
-    Ein bekanntes Beispiel ist der \href{<https://en.wikipedia.org/wiki/Vigenère_cipher}{Vigenère> cipher}.
+    Ein bekanntes Beispiel ist der <https://en.wikipedia.org/wiki/Vigenère_cipher>.
 
 13. **Was ist der Unterschied zwischen einem RNG und einem echten PRNG?**
 
-    Der 1.1.R}andom \textbf{N}umber \textbf{G1.1.enerator (RNG) generiert echte Zufallszahlen auf der Basis von physikalischen Prozessen, wie Rauschen. Er ist nicht-deterministisch und unvorhersehbar.
+    Der **R**andom **N**umber **G**enerator (RNG) generiert echte Zufallszahlen auf der Basis von physikalischen Prozessen, wie Rauschen. Er ist nicht-deterministisch und unvorhersehbar.
 
-    Der 1.1.P}seudo \textbf{R}andom \textbf{N}umber \textbf{G1.1.enerator (PRNG) generiert statistisch zufällige Zahlen auf Basis eines _Seeds_. Bleibt der Seed gleich, wird immer dieselbe Folge von Zufallszahlen generiert. Dieser Generator ist nicht kryptografisch sicher, da sich die Folge beobachten und vorhersagen lässt.
+    Der **P**seudo **R**andom **N**umber **G**enerator (PRNG) generiert statistisch zufällige Zahlen auf Basis eines _Seeds_. Bleibt der Seed gleich, wird immer dieselbe Folge von Zufallszahlen generiert. Dieser Generator ist nicht kryptografisch sicher, da sich die Folge beobachten und vorhersagen lässt.
 
 14. **Was ist ein statistically secure PRNG?**
 
@@ -352,6 +352,7 @@
     Nein, da RC4 heutzutage als unsicher betrachtet wird. Anfangs wurde RC4 geheim gehalten, um Sicherheit durch die Geheimhaltung des Algorithmus zu garantieren.
 
 24. **Wie funktioniert Salsa20 in Grundzügen? Wie viele zufällige Bits werden dabei auf einmal erzeugt? Auf welcher internen Datenstruktur arbeitet Salsa20? Wie wird diese im Laufe der Verschlüsselung verändert?**
+    
 25. **Was ist ChaCha? Wie unterscheidet es sich von Salsa20? Was ist der Vorteil?**
 
 26. **Wo wird ChaCha verwendet?**
@@ -431,7 +432,7 @@
 
 64. **Was heißt SHA?**
 
-    SHA steht für 1.1.S}ecure \textbf{H}ash \textbf{A1.1.lgorithm.
+    SHA steht für **S**ecure **H**ash **A**lgorithm.
 
 65. **Nach welchem Prinzip funktioniert SHA-1? Was ist seine Blockgröße? Was ist seine Digest Size? Welche Attacke gibt es gegen SHA-1?**
 
@@ -451,7 +452,7 @@
 
 70. **Was ist HMAC und wie funktioniert es?**
 
-    HMAC steht für Keyed-1.1.H}ashing \textbf{M}essage \textbf{A}thentication \textbf{C1.1.ode und ist eine standardisierte Einweg-Hashfunktionen, die mit einem Schlüssel $k$ arbeitet, aber Hashes anstelle von Verschlüsselung verwendet.
+    HMAC steht für Keyed-**H**ashing **M**essage **A**thentication **C**ode und ist eine standardisierte Einweg-Hashfunktionen, die mit einem Schlüssel $k$ arbeitet, aber Hashes anstelle von Verschlüsselung verwendet.
 
     $t = H(k \oplus opad |H(k \oplus ipad|m))$
 
@@ -511,7 +512,7 @@
 
 98. **Vergleiche RSA Signaturen mit dem normalen RSA Algorithmus!**
 
-99. **Warum darf $k$ im Kontext von DSA nie mehrfach verwendet werden?**
+99.  **Warum darf $k$ im Kontext von DSA nie mehrfach verwendet werden?**
 
 100. **Wie funktioniert ElGamal?**
 
