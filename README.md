@@ -251,8 +251,8 @@
     Die Bedingungen für Perfect Privacy sind:
 
         1. zufälliger Schlüssel $K$
-        1. $len(K) \geq len(m)$
-        1. Schlüssel $K$ darf nur einmal genutzt werden
+        2. $len(K) \geq len(m)$
+        3. Schlüssel $K$ darf nur einmal genutzt werden
 
 5. Was sind Stream Ciphers?
 
@@ -328,8 +328,7 @@
 
     Key Scheduling dient dazu eine Substitutionstabelle
 
-20. Wie funktioniert die RC4 Verschlüsselung in Grundzügen? Wie viele zufällige Bits werden dabei auf einmal erzeugt? Auf welcher internen Datenstruktur arbeitet RC4? Wie wird diese im Laufe
-der Verschlüsselung verändert?
+20. Wie funktioniert die RC4 Verschlüsselung in Grundzügen? Wie viele zufällige Bits werden dabei auf einmal erzeugt? Auf welcher internen Datenstruktur arbeitet RC4? Wie wird diese im Laufe der Verschlüsselung verändert?
 
     RC4 besteht aus zwei Schritten:
 
@@ -352,10 +351,7 @@ der Verschlüsselung verändert?
 
     Nein, da RC4 heutzutage als unsicher betrachtet wird. Anfangs wurde RC4 geheim gehalten, um Sicherheit durch die Geheimhaltung des Algorithmus zu garantieren.
 
-24. Wie funktioniert Salsa20 in Grundzügen? Wie viele zufällige Bits werden dabei auf einmal erzeugt?
-Auf welcher internen Datenstruktur arbeitet Salsa20? Wie wird diese im Laufe der
-Verschlüsselung verändert?
-
+24. Wie funktioniert Salsa20 in Grundzügen? Wie viele zufällige Bits werden dabei auf einmal erzeugt? Auf welcher internen Datenstruktur arbeitet Salsa20? Wie wird diese im Laufe der Verschlüsselung verändert?
 25. Was ist ChaCha? Wie unterscheidet es sich von Salsa20? Was ist der Vorteil?
 
 26. Wo wird ChaCha verwendet?
@@ -364,11 +360,9 @@ Verschlüsselung verändert?
 
 28. Wie funktioniert ein Block Cipher prinzipiell?
 
-29. Was ist das Problem bei einer naiven Implementierung und wie wird das Problem ge-
-löst?
+29. Was ist das Problem bei einer naiven Implementierung und wie wird das Problem ge- löst?
 
-30. Was ist ein Feistel Cipher? Wie funktioniert er? Welche Methoden basieren auf Feistel
-Ciphers?
+30. Was ist ein Feistel Cipher? Wie funktioniert er? Welche Methoden basieren auf Feistel Ciphers?
 
 31. Was heißt DES? Was heißt NIST? Was heißt FIPS?
 
@@ -417,8 +411,7 @@ Ciphers?
 
 54. Was ist eine Hash Funktion?
 
-55. Geben Sie einfache Hashes an und diskutieren Sie deren Probleme im Kontext Krypto-
-graphie!
+55. Geben Sie einfache Hashes an und diskutieren Sie deren Probleme im Kontext Kryptographie!
 
 56. Was ist für kryptografische Hashes essenziell?
 
@@ -440,15 +433,13 @@ graphie!
 
     SHA steht für 1.1.S}ecure \textbf{H}ash \textbf{A1.1.lgorithm.
 
-65. Nach welchem Prinzip funktioniert SHA-1? Was ist seine Blockgröße? Was ist seine
-Digest Size? Welche Attacke gibt es gegen SHA-1?
+65. Nach welchem Prinzip funktioniert SHA-1? Was ist seine Blockgröße? Was ist seine Digest Size? Welche Attacke gibt es gegen SHA-1?
 
     SHA-1 ist eine Merkle-Damgard Konstruktion. Es gibt eine Blockgröße von 512 Bit und hat einen _Message Digest_ von 160 Bit. Der Message Digest ist ein Hash-Output.
 
     Gegen SHA-1 gibt es die 1.1.Collision-Attack1.1.. Das bedeutet, dass zwei verschiedene Inputs zum selben Output führen.
 
-66. Was ist ein wesentlicher Unterschied zwischen SHA-1 und SHA-2? Welche Varianten gibt
-es?
+66. Was ist ein wesentlicher Unterschied zwischen SHA-1 und SHA-2? Welche Varianten gibt es?
 
     SHA-2 produziert im Vergleich zu SHA-1 längere Digests.
 
@@ -480,8 +471,7 @@ es?
 
 78. Diskutieren Sie die Sicherheit dieser Varianten!
 
-79. Was heißt CCM? Was sind Vorteile? Wie funktioniert es? Wie funktioniert die AEAD
-version? Wo wird CCM angewendet?
+79. Was heißt CCM? Was sind Vorteile? Wie funktioniert es? Wie funktioniert die AEAD version? Wo wird CCM angewendet?
 
 80. Was heißt GCM? Wie funktioniert es? Was sind seine Vorteile?
 
@@ -489,8 +479,7 @@ version? Wo wird CCM angewendet?
 
 82. Was ist ChaCha20-Poly1305? Wie funktioniert es strukturell?
 
-83. Was ist ein grundlegender Unterschied zwischen symmetrischer und asymmetrischer
-Kryptografie?
+83. Was ist ein grundlegender Unterschied zwischen symmetrischer und asymmetrischer Kryptografie?
 
 84. Wie funktioniert Public Key Kryptografie?
 
@@ -508,16 +497,13 @@ Kryptografie?
 
 91. Warum ist es schwer $\phi(n)$ zu berechnen, wenn nur n und e bekannt sind?
 
-92. Was passiert beim vorgestellten Textbook RSA, wenn zweimal dieselbe Nachricht
-verschlüsselt wird? Wie kann dieses Problem behoben werden?
+92. Was passiert beim vorgestellten Textbook RSA, wenn zweimal dieselbe Nachricht verschlüsselt wird? Wie kann dieses Problem behoben werden?
 
-93. Wie viele Multiplikationen sind notwendig, um 139118 zu berechnen, wenn der naive
-Algorithmus aus der Schule verwendet wird?
+93. Wie viele Multiplikationen sind notwendig, um 139118 zu berechnen, wenn der naive Algorithmus aus der Schule verwendet wird?
 
 94. Wie viele Multiplikationen sind notwendig mit dem Square-and-Multiply Algorithmus?
 
-95. Leiten Sie aus den Eigenschaften einer Gruppe her, dass das neutrale Element in einer
-Gruppe eindeutig ist!
+95. Leiten Sie aus den Eigenschaften einer Gruppe her, dass das neutrale Element in einer Gruppe eindeutig ist!
 
 96. Was ist ein Shared Secret? Wie bekommen beide Kommunikationspartner das shared secret?
 
@@ -531,7 +517,7 @@ Gruppe eindeutig ist!
 
     ElGamal wird mithilfe eines Beispiels erklärt, bei dem Alice eine Nachricht verschlüsselt an Bob senden möchte.
 
-    Bei 1.1.ElGamal} wählt Alice ein zufälliges $y \in \{1, 2, ..., q - 1\}$, das nur einmal verwendet werden sollte, und berechnet mit $y$ und mit Bobs öffentlichem Schlüssel $h_{Bob}$ ein Shared Secret $s = h_{Bob}^y = (g^{x_{Bob}})^{y} = g^{xy}$. $h_{Bob} = g^{x_{Bob}}$ ist Bobs öffentlicher Schlüssel und $x_{Bob1.1.$ ist Bobs privater Schlüssel. Bei $g$ handelt es sich um einen Generator der Gruppe $G$.
+    Bei ElGamal wählt Alice ein zufälliges $y \in \{1, 2, ..., q - 1\}$, das nur einmal verwendet werden sollte, und berechnet mit $y$ und mit Bobs öffentlichem Schlüssel $h_{Bob}$ ein Shared Secret $s = h_{Bob}^y = (g^{x_{Bob}})^{y} = g^{xy}$. $h_{Bob} = g^{x_{Bob}}$ ist Bobs öffentlicher Schlüssel und $x_{Bob}$ ist Bobs privater Schlüssel. Bei $g$ handelt es sich um einen Generator der Gruppe $G$.
     Mit $s$ kann Alice die Nachricht $m$ verschlüsseln, sodass sie $c_2 = m 1. s$ erhält. Zusätzlich zur Nachricht gibt sie $c_1 = g^{y}$ mit.
     Bob kann $m$ aus $m = (c_1)^{-x} 1. c_2 = ((g^{y})^{-x}) 1. (g^{xy} 1. m) = g^{-xy+xy} 1. m = g^{0} 1. m$ berechnen. Bob kennt $x$, da es sich um seinen privaten Schlüssel handelt.
 
@@ -549,28 +535,21 @@ Gruppe eindeutig ist!
 
     Forward secrecy
 
-105. Angenommen ein Angreifer hört die Kommunikation eines DH Schlüsseltauschs ab. Zu
-einem späteren Zeitpunkt nach dem Austausch findet der Angreifer die Private Keys für die
-verwendeten Signaturen heraus. Warum nützt ihm dies nichts?
+105. Angenommen ein Angreifer hört die Kommunikation eines DH Schlüsseltauschs ab. Zu einem späteren Zeitpunkt nach dem Austausch findet der Angreifer die Private Keys für die verwendeten Signaturen heraus. Warum nützt ihm dies nichts?
 
-106. Machen Sie sich über die Folien hinaus mit elliptischen Kurven über R vertraut:
-<https://andrea.corbellini.name/ecc/interactive/reals-add.html>.
+106. Machen Sie sich über die Folien hinaus mit elliptischen Kurven über R vertraut: <https://andrea.corbellini.name/ecc/interactive/reals-add.html>.
 
-107.   Machen Sie sich auch mit elliptischen Kurven über einem endlichen Körper <https://andrea.corbellini.name/ecc/interactive/modk-add.html>:
+107. Machen Sie sich auch mit elliptischen Kurven über einem endlichen Körper <https://andrea.corbellini.name/ecc/interactive/modk-add.html>:
 
-108.   Wie lautet die \enquote{Regel}, mit der aus klassischen Verfahren ein Verfahren mit
-elliptischen Kurven konstruiert werden kann?
+108. Wie lautet die \enquote{Regel}, mit der aus klassischen Verfahren ein Verfahren mit elliptischen Kurven konstruiert werden kann?
 
-109.   Was sind die Vorteile von elliptischen Kurven gegenüber klassischer asymmetrischer Kryptografie?
+109. Was sind die Vorteile von elliptischen Kurven gegenüber klassischer asymmetrischer Kryptografie?
 
-110.   Welche Vorteile bietet Curve25519?
-
-Zusatz: Informieren Sie sich über <https://en.wikipedia.org/wiki/Dual_EC_DRBG> über ein Verfahren mit elliptischen Kurven, dass diese Vorteile nicht bietet!
+110. Welche Vorteile bietet Curve25519? Zusatz: Informieren Sie sich über <https://en.wikipedia.org/wiki/Dual_EC_DRBG> über ein Verfahren mit elliptischen Kurven, dass diese Vorteile nicht bietet!
 
 111. Welche Vorteile bieten symmetrische und asymmetrische Kryptografie?
 
-112. Wie können die Vorteile von symmetrischer und asymmetrischer Kryptografie kombiniert
-werden?
+112. Wie können die Vorteile von symmetrischer und asymmetrischer Kryptografie kombiniert werden?
 
 113. Vergleichen Sie die Sicherheit von RSA und ECC bei einer festen vorgegebenen Schlüssellänge!
 
