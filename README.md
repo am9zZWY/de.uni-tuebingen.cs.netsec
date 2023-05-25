@@ -50,37 +50,37 @@
 
 10. Was ist das Dolev-Yao Attacker Model? Wozu ist demnach ein Angreifer in der Lage?
 
-        Im Dolev-Yao Attacker Model geht man von bestimmten Bedingungen und einer bestimmten Umgebung aus, in denen sich ein Angreifer befindet, um die Verschlüsselung eines Protokolls zu knacken:
+    Im Dolev-Yao Attacker Model geht man von bestimmten Bedingungen und einer bestimmten Umgebung aus, in denen sich ein Angreifer befindet, um die Verschlüsselung eines Protokolls zu knacken:
 
-            1. Umgebung: ein Netzwerk, das aus einer bestimmten Anzahl an Teilnehmern besteht. Alle Teilnehmer sind miteinander vernetzt und tauschen Nachrichten aus. Weitere Teilnehmer können zu jedem Zeitpunkt dazukommen und müssen nicht autorisiert sein.
-            2. Angreifer: der Angreifer ist ein Teilnehmer des Netzwerks, der Nachrichten senden, empfangen, abfangen und manipulieren und als ein anderer Teilnehmer senden kann. Der Angreifer kann nicht die Sicherheit knacken.
+        1. Umgebung: ein Netzwerk, das aus einer bestimmten Anzahl an Teilnehmern besteht. Alle Teilnehmer sind miteinander vernetzt und tauschen Nachrichten aus. Weitere Teilnehmer können zu jedem Zeitpunkt dazukommen und müssen nicht autorisiert sein.
+        2. Angreifer: der Angreifer ist ein Teilnehmer des Netzwerks, der Nachrichten senden, empfangen, abfangen und manipulieren und als ein anderer Teilnehmer senden kann. Der Angreifer kann nicht die Sicherheit knacken.
 
-        Ein Protokoll kann nach diesem Angreifermodell als sicher betrachtet werden, wenn der Angreifer keine Nachrichten 1.1.unentdeckt1.1. manipulieren kann.
+    Ein Protokoll kann nach diesem Angreifermodell als sicher betrachtet werden, wenn der Angreifer keine Nachrichten 1.1.unentdeckt1.1. manipulieren kann.
 
 11. Wofür stehen Alice, Bob, Trudy und Eve in der Literatur?
 
-            1. Alice und Bob: normale Gesprächspartner, die sicher Nachrichten austauschen wollen.
-            2. Trudy: steht für Intruder und kann Nachrichten abfangen, löschen und hinzufügen.
-            3. Eve: steht für Eavesdropper und kann Nachrichten (passiv) mitlesen.
+    1. Alice und Bob: normale Gesprächspartner, die sicher Nachrichten austauschen wollen.
+    2. Trudy: steht für Intruder und kann Nachrichten abfangen, löschen und hinzufügen.
+    3. Eve: steht für Eavesdropper und kann Nachrichten (passiv) mitlesen.
 
 12. Was sind entsprechende Entitäten in der Realität?
 
-            1. Alice und Bob: Webbrowser/Server, Client/Server, DNS-Server, Router
-            2. Trudy und Eve: Angreifer, die eine Verschlüsselung knacken wollen
+    1. Alice und Bob: Webbrowser/Server, Client/Server, DNS-Server, Router
+    2. Trudy und Eve: Angreifer, die eine Verschlüsselung knacken wollen
 
 13. Erklären Sie Verschlüsselung formal mithilfe von Funktionen und erklären Sie die verwendeten
     Parameter!
 
-        $E(K_{e}, m) = c$
+    $E(K_{e}, m) = c$
 
-            1. $E$ ist die Verschlüsselungsfunktion
-            2. $K$ ist der Schlüssel. Man unterscheidet zwischen symmetrischer $K_{e} = K_{d}$ und asymmetrischer Verschlüsselung, bei der zwei Schlüssel gibt, für die meist $K_{e} = K^{+}$ und $K_{d} = K^{-}$ gilt.
-            3. $m$ ist die Klartextnachricht.
-            4. $c$ ist der verschlüsselte Text. Die Abkürzung steht für _Cipher_.
+    * $E$ ist die Verschlüsselungsfunktion
+    *. $K$ ist der Schlüssel. Man unterscheidet zwischen symmetrischer $K_{e} = K_{d}$ und asymmetrischer Verschlüsselung, bei der zwei Schlüssel gibt, für die meist $K_{e} = K^{+}$ und $K_{d} = K^{-}$ gilt.
+    * $m$ ist die Klartextnachricht.
+    * $c$ ist der verschlüsselte Text. Die Abkürzung steht für _Cipher_.
 
 14. Was ist ein XOR Cipher?
 
-        Bei einem XOR Cipher wird die Klartextnachricht $m$ mithilfe eines Schlüssels $K$ mittels XOR-Operation verschlüsselt: $m \xor m = c$
+    Bei einem XOR Cipher wird die Klartextnachricht $m$ mithilfe eines Schlüssels $K$ mittels XOR-Operation verschlüsselt: $m \oplus m = c$
 
 15. Was bedeutet Interception?
 
@@ -96,8 +96,8 @@
 
 18. Wie können Angreifer an die Daten herankommen?
 
-        1. physisch: _Wiretapping_ oder Mitlesen des Netzwerkverkehrs.
-        2. logisch: Umleitung des Verkehrs.
+    1. physisch: _Wiretapping_ oder Mitlesen des Netzwerkverkehrs.
+    2. logisch: Umleitung des Verkehrs.
 
 19. Wie kann Eavesdropping verhindert werden?
 
@@ -168,31 +168,67 @@
 
 35. Welche zwei Ansätze gibt es, um Verschlüsselung zu brechen?
 
+    * Kryptoanalyse: Verschlüsselung wird gebrochen, indem der Angreifer die Verschlüsselungsmethode analysiert und versucht den Schlüssel zu finden. Bspw. statistische Kryptoanalyse, Known-Plaintext Attacken, Chosen-Plaintext Attacken.
+    * Schlüsselraum-Suche: Verschlüsselung wird gebrochen, indem der Angreifer alle möglichen Schlüssel ausprobiert. Bspw. Bruteforce Attacken, Dictionary Attacken.
+
 36. Nennen sie zwei Arten von Angriffen, um Schlüssel herauszufinden!
+
+    * Bruteforce Attacken
+    * Dictionary Attacken
 
 37. Was versteht man unter Kryptoanalyse?
 
+    Bei der Kryptoanalyse wendet man Mathematik und statistische Analysen an, um die Verschlüsselung kryptographischer Systeme zu knacken und Zugrif auf den Inhalt verschlüsselter Nachrichten zu erhalten.
+
 38. Welche drei unterschiedlichen Arten von Kryptoanalyse gibt es?
+
+    * Ciphertext-only: Es liegt nur der Ciphertext vor.
+    * Known-plaintext: Es liegen mehrere Klartext-Ciphertext Paare vor, die mit dem System verschlüsselt wurden.
+    * Choosen-plaintext: Es dürfen beliebige Klartextnachrichten mit dem System verschlüsselt werden.
 
 39. Was sind side channel attacks?
 
+    Attacken, die über einen unsicheren Seitenkanal passieren. Ein Seitenkanal kann etwa die Temperatur eines Systems oder dessen Stromverbrauch sein, über den Annahmen über das System getroffen werden können, etwa, wie lang der Schlüssel ist, wie lang die verschlüsselte Nachricht ist,oder, welche Verschlüsselung verwendet wird.
+
 40. Wie funktioniert eine brute-force attack auf Passwörter bzw. auf Verschlüsselung?
+
+    * Passwort-Attacke: Der Benutzername ist bekannt. Es werden solange zufällige Passwörter generiert, bis das richtige gefunden wurde.
+    * Encryption-Key-Attacke: Es werden so lange Schlüssel generiert und eine verschlüsselte Nachricht damit entschlüsselt, bis der Inhalt der Nachricht plausibel ist.
 
 41. Wovon hängen die Erfolgschancen von brute-force attacks vorwiegend ab?
 
+    Von der Schlüsselgröße. Der Schlüsselraum wächst exponentiell mit der Schlüssellänge.
+
 42. Was ist eine dictionary attack?
+
+    Anstelle zufällige Passwörter generieren, wird versucht eine Verschlüsselung mit einer Liste häufig verwendeter Passwörter zu knacken.
 
 43. Wie funktioniert statistische Kryptoanalyse mit cyphertext-only? Was ist eine Voraussetzung dafür?
 
+    Bei der statistischen Kryptoanalyse wird etwa die Frequenz der Buchstaben in einer Cipher mit einer bekannten Frequenztabelle einer Sprache abgeglichen. Die Voraussetzung dafür ist, dass die Verschlüsselung nicht den Klartext 1:1 abbildet, sondern etwa durch Substitution oder XOR verschlüsselt.
+
 44. Beschreiben Sie, wie eine Known-Plaintext Attack funktioniert?
+
+    XOR Cipher:
+    * $m = 010001101$
+    * $c = 111011111$
+
+    $m \oplus c = k$
+    $010001101 \oplus 111011111 = 101010010$
 
 45. Warum ist eine Chosen-Plaintext Attack wirkungsvoller?
 
+    Der Angreifer kann beliebig viele Nachrichten verschlüsseln und die erhaltenen Cipher analysieren. Lässt sich mittels statistischer Kryptoanalyse ein Muster erkennen, kann evtl. die Verschlüsselung geknackt werden.
+
 46. Nennen Sie einen Satz mit 26 verschiedenen Buchstaben!
+
+    "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern"
 
 47. Was nutzen Side Channel Attacks aus? Nennen Sie Beispiele für Side Channel Attacks!
 
-# Kapitel 2
+    Side Channel Attacks nutzen Informationen, die über einen unsicheren Seitenkanal verfügbar sind. Beispiele sind etwa die Temperatur eines Systems oder dessen Stromverbrauch.
+
+## Kapitel 2
 
 1. Nennen Sie eine allgemeine Notation für Verschlüsselung!
 
@@ -268,8 +304,8 @@
 
     Ein Stream Cipher ist ein PRNG, bei dem der Seed als Schlüssel fungiert und bei dem eine Nachricht $m$ bitweise per XOR-Operation mit dem Keystream $ks$ verschlüsselt wird.
 
-        1. Verschlüsselung: $c(i) = ks(i) \xor m(i)$.
-        2. Entschlüsselung: $m(i) = ks(i) \xor c(i)$
+        1. Verschlüsselung: $c(i) = ks(i) \oplus m(i)$.
+        2. Entschlüsselung: $m(i) = ks(i) \oplus c(i)$
 
     Der Schlüssel ist symmetrisch.
 
@@ -426,7 +462,7 @@ es?
 
     HMAC steht für Keyed-1.1.H}ashing \textbf{M}essage \textbf{A}thentication \textbf{C1.1.ode und ist eine standardisierte Einweg-Hashfunktionen, die mit einem Schlüssel $k$ arbeitet, aber Hashes anstelle von Verschlüsselung verwendet.
 
-    $t = H(k \xor opad |H(k \xor ipad|m))$
+    $t = H(k \oplus opad |H(k \oplus ipad|m))$
 
 71. Was können Sie über seine Sicherheit aussagen?
 
