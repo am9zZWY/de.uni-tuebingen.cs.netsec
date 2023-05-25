@@ -352,7 +352,7 @@
     Nein, da RC4 heutzutage als unsicher betrachtet wird. Anfangs wurde RC4 geheim gehalten, um Sicherheit durch die Geheimhaltung des Algorithmus zu garantieren.
 
 24. **Wie funktioniert Salsa20 in Grundzügen? Wie viele zufällige Bits werden dabei auf einmal erzeugt? Auf welcher internen Datenstruktur arbeitet Salsa20? Wie wird diese im Laufe der Verschlüsselung verändert?**
-    
+
 25. **Was ist ChaCha? Wie unterscheidet es sich von Salsa20? Was ist der Vorteil?**
 
 26. **Wo wird ChaCha verwendet?**
@@ -512,7 +512,7 @@
 
 98. **Vergleiche RSA Signaturen mit dem normalen RSA Algorithmus!**
 
-99.  **Warum darf $k$ im Kontext von DSA nie mehrfach verwendet werden?**
+99. **Warum darf $k$ im Kontext von DSA nie mehrfach verwendet werden?**
 
 100. **Wie funktioniert ElGamal?**
 
@@ -557,3 +557,348 @@
 114. **Was können Quantencomputer effizient tun, was klassische Computer nicht können?**
 
 115. **Ist symmetrische Kryptografie anfällig für Angriffe durch Quantencomputer?**
+
+## Kapitel 3
+
+1. **Erklären Sie ein Problem, das beim Einsatz von digitalen Signaturen entstechen kann!**
+2. **Was ist challenge-response authentication?**
+3. **Was ist endpoint authentication?**
+4. **Welche Problem kann mit pubic key authentication entstehen?**
+5. **Wie funktioniert eine MITM attack, wenn nur public key (ohne Zertifikate) für Authen- tifizierung und Verschlüsselung angewendet werden?**
+6. **Fassen Sie wesentliche Eigenschaften asymmetrischer Kryptographie zusammen!**
+7. **Was sind Anwendungen davon?**
+8. **Was enthält ein digitales Zertifikat?**
+9. **Warum werden vertrauenswürdige Certificate Authorities für digitale Zertifikate benö- tigt?**
+10. **Wie funktioniert die Ausstellung eines Zertifikats?**
+11. **Was sind root bzw. intermediate certificates?**
+12. **Wie kommt ein Zertifikat zum Ziel und wie wird es genutzt? sind root bzw. intermediate certificates?**
+13. **Was kann Vertrauen in eine CA validiert werden?**
+14. **Wie ist der verbreiteste Standard für Zertifikate?**
+15. **Was für Informationen enthält er typischerweise?**
+16. **Was ist eine PKI?**
+17. **Wo werden Zertifikate beispielsweise verwendet?**
+18. **Was muss geschehen, wenn der private key eines Zertifikats vor Ablaufzeit bekannt wird?**
+19. **Wie erhalten Benutzer den public key einer CA?**
+20. **Seit wann gibt es (ungefähr) X.509 Zertifikate?**
+21. **Was ist ein Common Name im Kontext von X.509?**
+22. **Was sind Alternative Names?**
+23. **Welche 3 Basic Types gibt es und wofür werden sie verwendet?**
+24. **Nennen Sie Beispiele für Client Certificates!**
+25. **Was sind Wildcard Certificates und wofür sind sie gut?**
+26. **Was für Namen decken sie ab?**
+27. **Nennen Sie 3 Certificate Validation Levels und erklären Sie diese!**
+28. **Erklären Sie die Certificate Request Procedure!**
+29. **Was ist ein CSR? Welchem Format folgt es typischerweise?**
+30. **Was ist eine CRL und wofür wird sie verwendet?**
+31. **Was sind Probleme beim Nutzen von CRLs?**
+32. **Was ist eine Certificate Chain?**
+33. **Wie kann die Vertrauenswürdigkeit eines Root Certificate überprüft werden?**
+34. **Wo finden sich Informationen über die Certificate Chain in Zertifikaten?**
+35. **Wie werden Certificate Chains verifiziert?**
+36. **Was ist cross-certification?**
+37. **Wofür ist cross-certification hilfreich?**
+38. **Schauen Sie sich Informationen über Zertifikate in Ihrem Browser an!**
+39. **Wofür steht OCSP? Wofür ist es hilfreich?**
+40. **Welche Probleme sind bei OCSP bekannt?**
+41. **Vergleichen Sie OCSP mit CRLs!**
+42. **Was sind Schwächen von X.509-Zertifikaten in der Praxis? Zählen Sie mindestens 4 auf und erklären Sie diese!**
+43. **Gab es in der Vergangenheit schon schwerwiegende Probleme mit CAs? Nennen Sie zwei Beispiele!**
+44. **Was bedeutet ACME? Welches Problem löst es?**
+45. **Nennen Sie 3 Beispiele, bei denen Ownership unterschiedlich nachgewiesen werden kann!**
+46. **Wo werden ACME client/server eingesetzt?**
+47. **Wofür wird der Private_account_key verwendet?**
+48. **Wofür verwendet der ACME-Server den Public_account_key?**
+49. **Wie funktioniert die ACME Web Challenge? Was wird durch sie nachgewiesen? Wofür wird sie verwendet?**
+50. **Wie funktioniert die ACME DNS Challenge? Was wird durch sie nachgewiesen? Wofür wird sie verwendet?**
+51. **Wie funktioniert die ACME Mail Challenge? Was wird durch sie nachgewiesen? Wofür wird sie verwendet?**
+52. **WasbedeutetCAAundwasbewirktes?Wiewirdestechnischumgesetzt?Wasbedeuten Issuewild und IODEF in dem Kontext?**
+53. **Seit 2017 ist die Implementierung von CAA verpflichtend. Für wen?**
+54. **Was ist ein Merkle Tree? Was ist der Vorteil eines Merkle Trees gegenüber naiven alter- nativen Ansätzen?**
+55. **Welches Problem versucht Certificate Transparency zu lösen?**
+56. **Was für Informationen werden durch Certificate Transparency offengelegt?**
+57. **Was sind Certificate Transparency logs und was tun sie?**
+58. **Was sind Certificate Transparency monitors und was tun sie?**
+59. **Was sind Certificate Transparency auditors und was tun sie?**
+60. **Wie helfen Merkle Trees dabei?**
+61. **Wie kann man Ansätze klassifizieren, die Vertrauen im Kontext Sicherheit aufbauen?**
+62. **Erklären Sie wie das Web of Trust funktioniert!**
+63. **Was ist in dem Kontext "Owner Trust"?**
+64. **Erklären Sie anhand CACert wie eine CA auf Prinzipien des WoT aufbebaut werden kann!**
+65. **Was sind Probleme eines solchen Ansatzes und wie hat sich dieser in der Praxis durch- gesetzt?**
+66. **Wofür steht PGP und wofür wird es eingesetzt? Was ist GPG? Was ist OpenPGP?**
+67. **Was ist ein Key Server?**
+68. **Was für public keys wird in PGP WoT vertraut?**
+69. **Warum hängt das Aussehen des WoT vom Betrachter ab?**
+70. **Was ist ein PGP Fingerprint? Welches Problem löst er? Wofür wird er verwendet?**
+71. **Was für Angriffen unterliegen fingerprints?**
+72. **Was für Probleme verbleiben mit fingerprints? Welches Problem wird durch fingerprints folglich nur gelöst?**
+73. **Was für Probleme verbleiben bei der Anwendung von PGP?**
+
+## Kapitel 4
+
+1. **Wie funktioniert der gesamt Prozess für Authentication mittels Passwords?**
+2. **Was sind Probleme mit Passwords?**
+3. **Was versteht man unter Password Authentication?**
+4. **Was versteht man unter Challenge-Response Authentication?**
+5. **Was sind Vorteile davon?**
+6. **Was ist Session Hijacking?**
+7. **Was sind brute-force Angriffe gegen Passwörter und was kann man dagegen tun?**
+8. **Warum sollten keine Klartext-Passwords auf Servern gespeichert werden? Was ist eine Gegenmaßnahme?**
+9. **Was sind Rainbow Tables? Was ist eine Gegenmaßnahme?**
+10. **Warum ist es wichtig starke Passwörter zu verwenden? Erklären Sie, warum schwache Passwörter trotz salted hashes eine Gefahr darstellen!**
+11. **Ist häufiges Ändern eines kürzeren Passworts eine Alternative?**
+12. **Wofür steht PAP? Eklären Sie PAP!**
+13. **Was sind seine Probleme? Wie können sie teilweise behoben werden?**
+14. **Wofür steht CHAP? Erklären Sie CHAP!**
+15. **Wie schützt es gegen replay attacks? Welche zwei Eigenschaften machen CHAP ver- wundbar?**
+16. **Wofür steht CRAM-MD5? Erklären Sie CRAM-MD5!**
+17. **Nennen Sie 3 Vorteile und 2 Nachteile von CRAM-MD5!**
+18. **Wofür steht SCRAM? Erklären Sie SCRAM!**
+19. **Was ist ein wesentlicher Vorteil von SCRAM gegenüber CRAM-MD5?**
+20. **Warum sollte SCRAM nur mit TLS verwendet werden?**
+21. **Was sind zwei Schwachstellen von SCRAM?**
+22. **Wofür steht NTLM? Was für eine authentication protocol implementiert es?**
+23. **Was für Schwächen weist der LM-Hash auf?**
+24. **NTLM verwendet 128 bit lange hash values als Schlüssel für Athentifizierung. Warum gilt diese trotzdem unsicher?**
+25. **Wird NTLM noch empfohlen? Wird es noch eingesetzt? Warum?**
+26. **Wofür steht MS-CHAP? Erklären Sie MS-CHAP!**
+27. **Was ist ein Vorteil von MS-CHAP gegenüber normalem CHAP?**
+28. **Was sind verbleibende Nachteile von MS-CHAPv2?**
+29. **Wie funktioniert Public Key Authentication? Was Herausforderungen dabei?**
+30. **Wofür steht SASL? Was ist es? Was definiert es? Was sind seine Vorteile?**
+31. **Nennen Sie 3 authentication mechanisms, die von SASL unterstützt werden!**
+32. **Verwendet SASL diese Protokolle mit oder ohne Verschlüsselung?**
+33. **Nennen Sie 2 Anwendungen, die SASL verwenden!**
+34. **Wofür steht GSSAPI? Was ist es? Wie ist die Beziehung bzw. der Unterschied zwischen SASL und GSSAPI?**
+35. **Wofür steht MFA? Was bedeutet es?**
+36. **Was ist eine Anforderung an die verwendeten Credetials?**
+37. **Nennen Sie 4 Arten von Authentication Factors!**
+38. **Wofür steht OTP? Was bedeutet es?**
+39. **Nennen Sie 3 Implementierungsvarianten von OTP! Wofür wird es typischerweise ein- gesetzt?**
+40. **Wofür steht TOTP? Wie funktioniert es?**
+41. **WarummussmansichmitderEingabesolcherpwdsbeeilen?Wasgeschieht,wennman solche pwds schnell hintereinander berechnet?**
+42. **Was sind Challenge-Response OTPs?**
+43. **Wofür wird das Lamport Scheme verwendet? Wie funktioniert es? Welches Wissen be- nötigt der Client, um Passwörter zu erzeugen?**
+44. **In welcher Reihenfolge werden die Passwords generiert? Was wäre, wenn man die Rei- henfolge umdrehen würde?**
+45. **Wie werden Client und Server synchronisiert, so dass der Client as richtige Passwort senden kann?**
+46. **Was sind Vorteile des Lamport Schemes?**
+47. **Wofür steht U2F? Was wird darafu gespeichert?**
+48. **Wie funktioniert die Registrierung bei einem Server mit U2F?**
+49. **Wie funktionier die Authentication bei einem Server mit U2F?**
+50. **Was sind Vorteile von U2F gegenüber konventioneller Authentication mit Hilfe eines public/private Key Pairs?**
+51. **Welche Gefahr bestünde, wenn man den secret key eines U2F devices auslesen könnte?**
+52. **Wofür steht FIDO? Wer standardisiert FIDO? Was ist die Relation zwischen U2F und FIDO?**
+53. **Wofür steht CTAP? Was ist der Authenticator? Was ist die Relying Party?**
+54. **Wie funktioniert Registrierung mit FIDO2?**
+55. **Wie funktioniert Authentication mit FIDO2?**
+56. **Warum wird die URL bei FIDO2 mitsigniert?**
+57. **Wofür wird FIDO2 typischerweise verwendet?**
+58. **Warum ist es problematisch, wenn ein security stick verloren geht?**
+59. **Was ist notwendig, um in solchen Situationen Hife anbieten zu können?**
+60. **Was für eine Policy gibt es oftmals in Firmen bezüglich security sticks?**
+61. **Wofür steht IAM? Was sind seine Ziele?**
+62. **Nennen Sie zwei Implementierungen von IAM und grenzen Sie sie voneinander ab!**
+63. **Was ist Authorization?**
+64. **Was ist Authentication?**
+65. **Wofür steht RBAC? Was bedeutet es?**
+66. **Wofür steht ABAC? Was bedeutet es?**
+67. **Wie funktioniert IAM konzeptionell beim Einloggen?**
+68. **Was macht ein Network Identity Provider? Welches Protokoll wird in dem Kontext ver- wendet? Welche Implementierungen wind bekannt?**
+69. **Was macht ein Web Identity Provider? Welche Frameworks gibt es? Wie heißten Imple- mentierungen davon?**
+70. **Was macht ein Identity Storage? Welche Protokolle werden dafr oft verwendet? Wie heißen Implementierungen davon??**
+71. **Wofür steht SSO? Was bedeutet es?**
+72. **Wie kann SSO implementiert sein?**
+73. **Wofür LDAP bzw. LDAPS? Wofür wird es verwendet? Nennen Sie Implementierungen davon!**
+74. **Was wird mit LDAP oftmals für Benutzer gespeichert?**
+75. **Was bedeuten DN, DC, OU und CN imm Kontext von LDAP?**
+76. **Was ist Kerberos in der griechischen Mytologie?**
+77. **Welches Protokoll ist der theoretische Hintergrund von Kerberos (ohne es zu erklären)? Was ist sein Ziel? Was wird als Voraussetzung benötigt?**
+78. **RekapitulierenSiedieVerschlüsselungs-undHash-Verfahren,diefürKerberosverwen- det wurden!**
+79. **Nennen Sie 3 Kerberos-Implementierungen!**
+80. **Welche Basic Components gibt es in Kerberos? Was tun sie, bzw. woraus bestehen sie?**
+81. **Was speichert die Realm-DB?**
+82. **Wofür steht KDC? Welche Services unterstützt er?**
+83. **Was bedeuten AS und TGS? Was sind ihre Aufgaben?**
+84. **Was ist ein Ticket im Kontext von Kerberos?**
+85. **Wie werden Tickets in Kerberos verwendet? Nennen Sie zwei Varianten!**
+86. **Was sind Vorteile von Tickets?**
+87. **Welche pre-shared secrets benötigt Kerberos?**
+88. **Welche session keys verwendet Kerberos?**
+89. **Welche tickets verwendet Kerberos?**
+90. **Wie funktioniert der Login bei Kerberos?**
+91. **Was geschieht bei der Client Authentication?**
+92. **Warum wird der Client/TGS Session Key zweimal zum Client gesendet (einmal in 6 und einmal in 7)?**
+93. **Die Authentication bei Kerberos verlangt kein Challenge/Response. Worin besteht sie stattdessen?**
+94. **Wie erfolgt die Client/Service Authorization in Kerberos?**
+95. **Wie findet der TGS heraus, dass der Client ordnungsgemäß vom AS authentifiziert wur- de? Welchen Schlüssel muss der Client haben?**
+96. **Ist es tragisch, wenn das TGT gestohlen wird?**
+97. **Welche Infos sendet der TGS zum Client?**
+98. **Wie wird sichergestellt, dass nur der Client und der Server selber den Client/Server Key bekommt?**
+99. **Was sendet der Client beim Client Service Request in Kerberos an den Service Server?**
+100. **Wie überprüft der Service Server, ob der Client seinen Dienst verwenden darf?**
+101. **Wie authentifiziert sich der Service Server gegenüber dem Client?**
+102. **Wo müsste überprüft werden, ob der Client eine Berechtigung hat einen angefragten Service zu nutzen? (Steht nicht auf den Folien)**
+103. **WarumwerdeninKerberosValidityPeriodsbzw.Timestampsverwendet?Wielangeist ein Ticket üblicherweise gültig? Was wird dadurch erschwert?**
+104. **Nochmal: Welche Tickets werden in Kerberos verwendet und wozu? Womit sind sie verschlüsselt und was beinhalten sie?**
+105. **Was ist Credential Delegation?**
+106. **WiebezeichnetmandieTatsache,dassdasTGTindenlocalcachedesComputerweiter- geleitet wird, in den man sich remote einlogt? Welches Protokoll wird dafür verwendet?**
+107. **Wo kann Kerberos gut verwendet werden, wo nicht? Begünden Sie! Was sind Alterna- tiven?**
+108. **Nennen Sie 3 Nachteile von Kerberos!**
+109. **Nennen Sie 6 Schwachstellen von Kerberos!**
+110. **Wofür steht AFS? Was ist es?**
+111. **Nennen Sie 3 Arten von File Systems!**
+112. **Was ist das Ziel von AFS?**
+113. **Aus welcher Zeit stammt AFS?**
+114. **Erläutern Sie die AFS Struktur!**
+115. **Was bedeuten ACLs und Quota im Kontext von AFS?**
+116. **Was sind public bzw. private cells?**
+117. **Was ist im Wesentlichen ein AFS token?**
+118. **Wofür wird ein WSI-account im Fachbereich Informatik der Uni Tübingen verwendet?**
+119. **Wo werden Nutzerdaten gespeichert?**
+120. **Wofür wird Kerberos verwendet? Wie heißt das Realm?**
+121. **Was geschieht beim Einloggen in einen Computer?**
+122. **Was geschieht bei weitern remote logins in andere Rechner?**
+123. **Wofür wird OAuth2 verwendet?**
+124. **Was ist OAuth2 erstmal nicht (Verwechslungspotential)?**
+125. **Stellen Sie zwei Use Cases für OAuth2 kurz dar! Was ist der originäre Vorteil von OAuth2?**
+126. **WassindClient,ProtectedResources,ResourceServer,ResourceOwner,Authorization Server und Client Scopes im Kontext von OAuth2?**
+127. **Was ist der Client Registration Workflow? Wozu soll eine Client Registration dienen? Wie zuverlässig ist das? Unter welchen Umständen kann ein Client Secret sinnvoll ver- wendet werden?**
+128. **Wie funktioniert der Authorization Code Flow in OAuth2?**
+129. **WasisteinAccessToken?Wofürwirdesverwendet?Warummussesnichtverschlüsselt sein? Wie ist es aufgebaut/kodiert? (nur ungefähr)**
+130. **Wasisteinrefreshtoken?Wofürwirdesverwendet?WannbekommtesderClient?Wie lange ist es gültig?**
+131. **Wie wird das Access Token vom Client zum Resource Server typischerweise übertra- gen?**
+132. **Wie ginge es noch? Warum sollte das aber vermieden werden?**
+133. **Was ist HTTP Header Live?**
+134. **Wo kann man probehalber mit OAuth2 interagieren?**
+135. **Was sind Limitierungen von OAuth2? Begründen Sie!**
+136. **Erklären Sie wie PKCE gegen Weiterleitung von Access Tokens an ein falsches Ziel schützt!**
+137. **Wofür steht OIDC? Was ist OIDC? Wer standardisiert OIDC?**
+138. **Was ist die Relation zwischen OAuth2 und OIDC?**
+139. **Worin besteht die Erweiterung von OAuth2 zu OIDC?**
+140. **Wann sendet der OIDC server ("OAuth2 Autorization Server") ein ID Token?**
+141. **Was enthält es?**
+142. **Wofür wird es nicht verwendet?**
+143. **Was ist ein IdP?**
+144. **Erkläutern Sie den Unterschied zwischen Authentication und Authorization, wenn Sie sich mit Ihrer Apple-ID über den Browser Spotify nutzen wollen! Welche Rolle über- nimmt der Account Server von Spotify dabei im Kontext von OIDC?**
+145. **Welche open-source Implementierungen gibt es für OAuth und OIDC? Worauf sollte man achten?**
+146. **Wofür steht SAML? Wofür ist es gut? Wer hat es standardisiert?**
+147. **Welche Implementierungen unterstützen SAML2?**
+
+## Kapitel 4: OAuth
+
+1. **Wofür wird OAuth2 verwendet? Welches Problem wird durch OAuth in erster Linie gelöst?**
+2. **Erklären Sie, warum OAuth nur ein Authorization Framework ist und kein Authentica- tion Framework! Was könnte stattdessen zur Authentication verwendet werden?**
+3. **Stellen Sie den Use Case für OAuth2 im Kontext von Spotify kurz dar! Was ist der originäre Vorteil von OAuth2?**
+4. **WassindClient,ProtectedResources,ResourceServer,ResourceOwner,Authorization Server und Client Scopes im Kontext von OAuth2?**
+5. **Was ist der Client Registration Workflow? Wozu soll eine Client Registration dienen?**
+6. **Unter welchen Umständen kann ein Client Secret sinnvoll verwendet werden? Erklären Sie, unter welchen Umständen es die Sicherheit nicht verbessert.**
+7. **WiefunktioniertderAuthorizationCodeGrantinOAuth2?Wozuwirderbenötigt?Was ist ein Endpoint eines Servers?**
+8. **Was ist ein Scope im Kontext von OAuth2?**
+9. **Was ist ein Access Token? Wofür wird es verwendet? ie ist es aufgebaut/kodiert? (nur ungefähr) Diskutieren Sie Realisierungsmöglichkeiten!**
+10. **Warum kann der Client nichts am Access Token unentdeck verändern? Wie unterschei- det es sich dadurch von einem Ticket? Was ist, wenn ein anderer Client das Access Token bekommt? Über was für einen Transportkanal wird das Access Token vom Client zum Resource Server typischerweise übertragen?**
+11. **Was ist ein Refresh Token? Wofür wird es verwendet? Wann bekommt es der Client? Wie lange ist es gültig? Warum ist es relevant zu wissen, wofür aktive Refresh Tokens existieren?**
+12. **WiekanneinResourceServerprüfen,obdasAccessTokengültigist?WeißderResour- ce Server, wer das Access Token gesendet hat?**
+13. **Wie wird ein Access Token typischerweise im HTTP header transportiert? Wie ginge es noch? Warum sollte das aber vermieden werden?**
+14. **Was hilft beim Debugging von OAuth2-basierten Anwendungen?**
+15. **Wo kann man probehalber mit OAuth2 interagieren?**
+16. **Wer muss wem in OAuth2 vertrauen? Die Sicherheit welcher allgemeinen Software- Komponente ist somit besonders kritisch?**
+17. **Was ist ein HTTP redirect? Wofür kann er in OAuth2 verwendet werden? Warum kann das eine Sicherheitlücke mit naivem OAuth2 darstellen?**
+18. **Erklären Sie wie PKCE gegen Weiterleitung von Access Tokens an ein falsches Ziel schützt!**
+19. **Was ist Open ID Connect (OIDC)?**
+20. **Inwiefern sind OAuth2 und OIDC “verwandt”? Wer standardisiert OIDC?**
+21. **Was ist die Relation zwischen OAuth2 und OIDC?**
+22. **Worin besteht die Erweiterung von OAuth2 zu OIDC? Was bewirkt der Scope openid?**
+23. **Welche neue Terminologie kommt im OIDC Kontext hinzu und wie entspricht sie der OAuth2 Terminologie?**
+24. **Beschreiben Sie den Authentication Code Flow für OIDC, wenn sich ein End-User mit Hilfe seines OpenID Providers bei einer Relying Party authentifiziert! Gehen Sie dabei auf die verwendeten Scopes ein!**
+25. **Wird mit OIDC die Authentication Method festgelegt?**
+26. **Was ist ein ID Token? Was für Informationen enthält es?**
+27. **Wofür wird es nicht verwendet?**
+28. **ErklärenSiewieOIDCundOAuth2verwendetwerden,wennSiesichmitIhremGoogle- Account bei Spotify anmelden, um über Alexa Musik zu streamen!**
+29. **Erläutern Sie dabei die Konzepte Authentication und Authorization! Welche Vorteile werden hier mit OIDC und OAuth2 erreicht?**
+30. **Diskutieren Sie wer in OIDC wem vertrauen muss und warum!**
+31. **Erläutern Sie den Satz "Jeder OpenID Provider ist ein Authorization Server". Gilt die Umkehrung? Nennen Sie ein Beispiel!**
+32. **Wie kann es sein, dass ein Server sowohl Authorization Server und OpenID Provider ist? Erklären Sie den Sachverhalt!**
+33. **Welche OIDC Rolle übernimmt ein Authorization Server im OIDC Kontext, wenn sich ein End-User mittels OIDC authentifiziert, um anschließend mit OAuth2 auf einen Dienst zuzugreifen?**
+34. **NennenSiezweiopen-sourceServer-ImplementierungenfürOAuthundOIDC!Worauf sollte man achten? Worauf sollte man für Client-Implementierungen zurückgreifen?**
+35. **Stellen Sie zusammenfassend die Rollen und den Ablauf in OAuth2 und OIDC gegen- über!**
+36. **Wofür steht SAML? Wofür wird es verwendet? Vergleichen Sie es mit OAuth2 und OIDC! Wer hat es standardisiert?**
+37. **Nennen Sie Implementierungen, die SAML unterstützen!**
+
+## Kapitel 5
+
+1. **Erklären Sie wie das Mail-System funktioniert! Welche Protokolle kommen dabei zum Einsatz? Wie heißen die Programme?**
+2. **Was ist eine wesentliche Einschränkung des Mail Standards für die Payload?**
+3. **Was sind Sicherheitsprobleme bei einem Standard-Mailsystem ohne Sicherheitsvorkeh- rungen?**
+4. **Welche Protokolle des Mail Agent verwenden Verschlüsselung, wie heißen sie und wel- che Portnummern verwenden sie?**
+5. **Welches Problem verbleiben trotzdem?**
+6. **Wie kann Mail dagegen auf Anwendungsebene abgesichert werden? Wie heißen die Ansätze?**
+7. **Wie funktioniert das Prinzip der Mail-Verschlüsselung?**
+8. **Wie funktioniert das Prinzip der Mail-Entschlüsselung?**
+9. **Wie wird dieses Prinzip genannt und warum? Was ist der Vorteil dieses Ansatzes?**
+10. **Was sind Möglichkeiten den öffenlichen Schlüssel im Kontext Email einem anderen Teilnehmer zuordnen zu können?**
+11. **Wie funktioniert Mail Signature und Verification?**
+12. **Wofür steht MIME? Welches Grundproblem löst es? Wozu wird es verwendet?**
+13. **Was ist S/MIME? Was kann es? Wie nennt man seine Syntax? Wie funktioiert es? Wel- che Arten von Zertifikaten werden verwendet?**
+14. **Wie heißt der MIME type für S/MIME? Wie ist er aufgebaut? Wo befindet ich der symmetrische Schlüssel? Was ist die Einschränkung der erreichten Privacy?**
+15. **Wie funktioniert eine S/MIME Signature?**
+16. **Worauf sollte man bei den Key Pairs für Verschlüsselung und Signature achten?**
+17. **Wie kann man als Student ein S/MIME Zertifikat bekommen?**
+18. **Wofür steht PGP und was leistet es?**
+19. **Wo kommen die Schlüssel für PGP her?**
+20. **Wo befindet sich der Schlüssel bei verschlüsselten Email?**
+21. **Wo befindet sich der Schlüssel bei einer signierten Email?**
+22. **Wofür kann PGP noch angewendet werden?**
+23. **Was sind Probleme mit webmail clients?**
+24. **Inwiefern ist Malware ein Problem mit Verschlüsselung?**
+25. **Warum ist Email-Security ein Problem mit mehreren Clients?**
+26. **Was ist die Konsequenz in Bezug auf Email-Security, wenn man seinen private key verliert?**
+27. **Welche Konsequenz ergibt sich für reqvoked key hinsichtlich Nutzung?**
+28. **Wie funktioniert die EFail Attack?**
+29. **Wie funktioniert DNS? Was sind RRs? Was ist eine Zone?**
+30. **Was ist DNS cache poisoining?**
+31. **Was bewirkt DNSSEC? Was bewirkt es nicht?**
+32. **Welche Schlüssel gibt es pro Zone?**
+33. **Was ist ein RRSIG RR und wofür wird er benutzt?**
+34. **Was ist ein DNSKEY RR und wofür wird er benutzt?**
+35. **Was ist ein DS RR und wofür wird er benutzt?**
+36. **Erklären Sie die Trust Chain bei DNSSEC anhand eines Beispiels!**
+37. **Welche Information muss ein Nameserver haben, damit er die Trust Chain überprüfen kann?**
+38. **Werden mit diesem Verfahren auch negative Replies signiert? Warum? Wo ist nun ein Problem?**
+39. **Wie wird nachgewiesen, dass ein bestimmter Name nicht existiert?**
+40. **Was ist ein NSEC RR und wofür wird er benutzt?**
+41. **Womit antwortet ein Nameserver, wenn er die Nichtexistenz eines Namens bestätigen möchte?**
+42. **Was ist Zone Walking?**
+43. **Was ist ein NSEC3 RR und wofür wird er verwendet?**
+44. **Wie funktioniert die negative reply mit NSEC3 RRs?**
+45. **Welche Angriffe sind gegen dieses System möglich? Beschreiben Sie, wie das funktio- nieren könnte!**
+46. **Wie stark ist DNSSEC verbreitet? Skizzieren Sie die Hitorie!**
+47. **Welche Resolver unterstützen typischerweise DNSSEC?**
+48. **Wie können stub resolvers von DNSSEC profitieren? Woran kann man erkennen, dass die Antwort authentifiziert ist?**
+49. **Wie kann man DNSSEC am Host aushebeln?**
+50. **DNSSEC bringt auch Probleme mit sich. Beschreiben Sie sie!**
+51. **Wovon hängt die Vertrauenswürdigkeit von DNSSEC ab?**
+52. **Was ist SSH? Auf welchem Port läuft der Dienst?**
+53. **Was sind Features von SSH?**
+54. **Welche Funktionen hat SSH?**
+55. **Wie funktioniert SSH Server Authentication? Diskutieren Sie den Begriff Certificate im Kontext von SSH!**
+56. **Welche Möglichkeiten gibt es für SSH Client Authentication?**
+57. **Seit wann gibt es SSH in der heutigen Form?**
+58. **Nennen Sie freie Implementierungen von SSH und differenzieren Sie zwischen Client und Server!**
+59. **Nennen Sie wichtige Utilities von OpenSSH!**
+60. **Erklären Sie die Unterschiede von File Transfer Options!**
+61. **Was ist SSH Tunneling? Beschreiben Sie es an einem Beispiel!**
+62. **Wie funktioniert ein SOCKS Proxy?**
+63. **Was sind typische Anwendungsfälle für SOCKS Proxies?**
+64. **Was müssen Anwendungen für den Einsatz mit SOCKS Proxies können?**
+65. **Wie können SSH und SOCKS miteinander kombiniert werden? Welcher Vorteil ergibt sich daraus?**
+66. **Wenn Sie SSH und SOCKS kombinieren, werden dann für unterschiedliche Verbindun- gen derselbe oder unterschiedliche Ports am SOCKS proxy für den Verkehr zwischen SSH Server und SOCKS proxy verwendet? Erklären Sie Ihre Antwort! (Transfer)**
+67. **VerleichenSiedieArtwiederZielportbeiSSHundSOCKSspezifiziertwird!(Transfer)**
+68. **WassindGemeinsamkeitenundUnterschiedezwischeneinenSOCKSundeinemHTTP Proxy?**
+69. **Wofür werden SIP und RTP im Kontext von VoIP verwendet?**
+70. **Wie kann man VoIP absichern?**
+71. **Warum ist es wichtig auch das Signalisierungsprotokoll zu verschlüsseln, wenn nur die ausgetauschten Inhalte schützenswert sind?**
+72. **Was ist WebRTC? Wie funktioniert VoIP über WebRTC?**
+73. **Für den Aufbau einer peer-to-peer SRTP Session werden die public keys der Endpunkte benötigt. Wie werden diese ausgetauscht?**
+74. **Wie könnte ein MITM die Sicherheit kompromittieren?**
+75. **Was ist H.323?**
+76. **Warum ist DH durch MITM angreifbar?**
