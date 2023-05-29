@@ -1,4 +1,63 @@
-# Review Questions
+# Network Security Review Questions
+
+## Abkürzungen
+
+* A:
+  * AEAD: Authenticated Encryption with Associated Data
+  * AES: Advanced Encryption Standard
+* C:
+  * CBC: Cipher Block Chaining Mode
+  * CCM: Counter Mode with CBC-MAC
+  * CTR: Counter Mode
+* D:
+  * DES: Data Encryption Standard
+  * DH: Diffie-Hellman
+  * DLP: Diskretes Logarithmus Problem
+  * DNS: Domain Name System
+    * DNSSEC: Domain Name System Security Extensions
+  * DSA: Digital Signature Algorithm
+* E:
+  * ECB: Electronic Codebook Mode
+  * ECC: Elliptic Curve Cryptography
+  * ECDSA: Elliptic Curve Signature Algorithm
+* F:
+  * FIPS: Federal Information Processing Standard
+  * FTP: File Transfer Protocol
+    * FTPS: File Transfer Protocol over TLS
+* G:
+  * GCM: Galois Counter Mode
+  * GMAC: @TODO
+* I:
+  * ID: Identity
+* J:
+  * JWT: JSON Web Token
+* K:
+  * KPA: Known-plaintext Attacke
+  * KSK: Key Signing Key
+* O:
+  * OIDC: OpenID Connect
+* M:
+  * MAC: Message Authentication Code
+    * HMAC: Hashed Message Authentication Code
+* N:
+  * NIST: National Institute of Standard and Technology
+* P:
+  * PKCE: Proof Key for Code Exchange
+  * PKI: Public Key Infrastructure
+  * PGP: Pretty Good Protection
+    * GPG: GNU PGP
+* R:
+  * RNG: Random Number Generator
+    * PRNG: Pseudo-random Number Generator
+  * RR: Round-Robin
+  * RSA: Rivest, Shamir, Adleman-Algorithm
+* S:
+  * SAML: Security Assertion Markup Language
+  * SOCKS: Sockets
+  * SSH: Secure Shell
+  * SSO: Single Sign-on
+* Z:
+  * ZSK: Zone Signing Key
 
 ## Kapitel 1
 
@@ -361,15 +420,25 @@
 
 28. **Wie funktioniert ein Block Cipher prinzipiell?**
 
-29. **Was ist das Problem bei einer naiven Implementierung und wie wird das Problem ge- löst?**
+29. **Was ist das Problem bei einer naiven Implementierung und wie wird das Problem gelöst?**
 
 30. **Was ist ein Feistel Cipher? Wie funktioniert er? Welche Methoden basieren auf Feistel Ciphers?**
 
 31. **Was heißt DES? Was heißt NIST? Was heißt FIPS?**
 
+    * DES: Data Encryption Standard
+    * NIST: National Institute of Standard and Technology
+    * FIPS: Federal Information Processing Standard
+
 32. **Wie groß ist die Block Size bei DES, wie groß der Schlüssel? Was sind round keys?**
 
+    * Blockgröße: 64 Bit
+    * Schlüsselgröße: 56 Bit + 8 Partitätsbits, alle 7 Bits.
+    * Round Key: Da DES in mehreren Runden die Nachricht verschlüsselt, wird für jede Runde ein Roundkey verwendet, mit dem ein Nachrichtenblock verschlüsselt wird.
+
 33. **Warum benötigt DES einen Key Schedule? Was macht er?**
+
+    Mithilfe des Key Scheduling Algorithmus' wird der 64 Bit lange Schlüssel
 
 34. **Was ist eine S-box? Was ist eine P-box?**
 
@@ -380,6 +449,15 @@
 37. **Was ist Triple-DES (3DES)? Was ist seine key size?**
 
 38. **Warum wird nicht 2DES verwendet?**
+
+    Aufgrund der Meet-in-the-middle Attacke. Mit 2DES wird die Nachricht mit zwei verschiedenen Schlüsseln ingesamt zwei Mal verschlüsselt.  
+    Bei einem Meet-in-the-middle Angriff mit einer Plaintext-Ciphertext Paar (KPA)
+
+    1. Plaintext mit allen möglichen 56 Bit Schlüsseln verschlüsseln und in Lookup-Tabelle eintragen.
+    2. Ciphertext mit allen möglichen 56 Bit Schlüsseln entschlüsseln und schauen, ob der entschlüsselte Cipher in der Lookup-Tabelle auftacht.
+    3. Idealerweise liegen für den Angreifer mehrere Plain- und Ciphertext-Paare vor, sodass das gefundene Schlüsselpaar gegengeprüft werden kann.
+
+    Aufgrund der Meet-in-the-middle Attacke liegt die Verschlüsselungssicherheit nicht bei 112 Bit (56 Bit * 56 Bit), sondern bei 57 Bit.
 
 39. **Wird 3DES verwendet? Welches Problem von DES wird durch 3DES nicht gelöst?**
 
@@ -408,9 +486,15 @@
 
 52. **Was heißt OFB und wie funktioniert es? Was sind seine Probleme?**
 
+    Output Feedback Block
+
 53. **Was heißt CFB und wie funktioniert es? Was sind seine Probleme?**
 
+    Cipher Feedback Block
+
 54. **Was ist eine Hash Funktion?**
+
+    Mit einer Hashfunktion wird ein Klartext in einen Cipher verschlüsselt. @TODO
 
 55. **Geben Sie einfache Hashes an und diskutieren Sie deren Probleme im Kontext Kryptographie!**
 
@@ -494,9 +578,9 @@
 
 89. **Auf welchen Problemen der Zahlentheorie basiert die meiste asymmetrische Kryptografie?**
 
-90. **Warum ist es im Kontext von RSA wichtig, dass d und e inverse zueinander sind?**
+90. **Warum ist es im Kontext von RSA wichtig, dass $d$ und $e$ inverse zueinander sind?**
 
-91. **Warum ist es schwer $\phi(n)$ zu berechnen, wenn nur n und e bekannt sind?**
+91. **Warum ist es schwer $\phi(n)$ zu berechnen, wenn nur $n$ und $e$ bekannt sind?**
 
 92. **Was passiert beim vorgestellten Textbook RSA, wenn zweimal dieselbe Nachricht verschlüsselt wird? Wie kann dieses Problem behoben werden?**
 
@@ -506,13 +590,13 @@
 
 95. **Leiten Sie aus den Eigenschaften einer Gruppe her, dass das neutrale Element in einer Gruppe eindeutig ist!**
 
-96. **Was ist ein Shared Secret? Wie bekommen beide Kommunikationspartner das shared secret?**
+96. **Was ist ein Shared Secret? Wie bekommen beide Kommunikationspartner das Shared Secret?**
 
 97. **Was ist non-repudiation?**
 
 98. **Vergleiche RSA Signaturen mit dem normalen RSA Algorithmus!**
 
-99. **Warum darf $k$ im Kontext von DSA nie mehrfach verwendet werden?**
+99.  **Warum darf $k$ im Kontext von DSA nie mehrfach verwendet werden?**
 
 100. **Wie funktioniert ElGamal?**
 
@@ -540,11 +624,15 @@
 
 106. **Machen Sie sich über die Folien hinaus mit elliptischen Kurven über R vertraut: <https://andrea.corbellini.name/ecc/interactive/reals-add.html>.**
 
-107. **Machen Sie sich auch mit elliptischen Kurven über einem endlichen Körper <https://andrea.corbellini.name/ecc/interactive/modk-add.html>:**
+107. **Machen Sie sich auch mit elliptischen Kurven über einem endlichen Körper vertraut: <https://andrea.corbellini.name/ecc/interactive/modk-add.html>:**
 
-108. **Wie lautet die \enquote{Regel}, mit der aus klassischen Verfahren ein Verfahren mit elliptischen Kurven konstruiert werden kann?**
+108. **Wie lautet die "Regel", mit der aus klassischen Verfahren ein Verfahren mit elliptischen Kurven konstruiert werden kann?**
+
+    Diskretes Logarithmus Problem des klassischen Verfahrens auf das Diskrete Logarithmus Problem der Elliptischen Kurven übertragen
 
 109. **Was sind die Vorteile von elliptischen Kurven gegenüber klassischer asymmetrischer Kryptografie?**
+
+    * kleinere Schlüsselgrößen
 
 110. **Welche Vorteile bietet Curve25519? Zusatz: Informieren Sie sich über <https://en.wikipedia.org/wiki/Dual_EC_DRBG> über ein Verfahren mit elliptischen Kurven, dass diese Vorteile nicht bietet!**
 
@@ -564,7 +652,7 @@
 2. **Was ist challenge-response authentication?**
 3. **Was ist endpoint authentication?**
 4. **Welche Problem kann mit pubic key authentication entstehen?**
-5. **Wie funktioniert eine MITM attack, wenn nur public key (ohne Zertifikate) für Authen- tifizierung und Verschlüsselung angewendet werden?**
+5. **Wie funktioniert eine MITM attack, wenn nur Public Key (ohne Zertifikate) für Authentifizierung und Verschlüsselung angewendet werden?**
 6. **Fassen Sie wesentliche Eigenschaften asymmetrischer Kryptographie zusammen!**
 7. **Was sind Anwendungen davon?**
 8. **Was enthält ein digitales Zertifikat?**
