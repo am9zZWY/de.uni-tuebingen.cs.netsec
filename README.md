@@ -712,77 +712,83 @@
 74. **Was wird mit LDAP oftmals für Benutzer gespeichert?**
 75. **Was bedeuten DN, DC, OU und CN imm Kontext von LDAP?**
 76. **Was ist Kerberos in der griechischen Mytologie?**
-77. **Welches Protokoll ist der theoretische Hintergrund von Kerberos (ohne es zu erklären)? Was ist sein Ziel? Was wird als Voraussetzung benötigt?**
-78. **RekapitulierenSiedieVerschlüsselungs-undHash-Verfahren,diefürKerberosverwen- det wurden!**
-79. **Nennen Sie 3 Kerberos-Implementierungen!**
-80. **Welche Basic Components gibt es in Kerberos? Was tun sie, bzw. woraus bestehen sie?**
-81. **Was speichert die Realm-DB?**
-82. **Wofür steht KDC? Welche Services unterstützt er?**
-83. **Was bedeuten AS und TGS? Was sind ihre Aufgaben?**
-84. **Was ist ein Ticket im Kontext von Kerberos?**
-85. **Wie werden Tickets in Kerberos verwendet? Nennen Sie zwei Varianten!**
-86. **Was sind Vorteile von Tickets?**
-87. **Welche pre-shared secrets benötigt Kerberos?**
-88. **Welche session keys verwendet Kerberos?**
-89. **Welche tickets verwendet Kerberos?**
-90. **Wie funktioniert der Login bei Kerberos?**
-91. **Was geschieht bei der Client Authentication?**
-92. **Warum wird der Client/TGS Session Key zweimal zum Client gesendet (einmal in 6 und einmal in 7)?**
-93. **Die Authentication bei Kerberos verlangt kein Challenge/Response. Worin besteht sie stattdessen?**
-94. **Wie erfolgt die Client/Service Authorization in Kerberos?**
-95. **Wie findet der TGS heraus, dass der Client ordnungsgemäß vom AS authentifiziert wur- de? Welchen Schlüssel muss der Client haben?**
-96. **Ist es tragisch, wenn das TGT gestohlen wird?**
-97. **Welche Infos sendet der TGS zum Client?**
-98. **Wie wird sichergestellt, dass nur der Client und der Server selber den Client/Server Key bekommt?**
-99. **Was sendet der Client beim Client Service Request in Kerberos an den Service Server?**
-100. **Wie überprüft der Service Server, ob der Client seinen Dienst verwenden darf?**
-101. **Wie authentifiziert sich der Service Server gegenüber dem Client?**
-102. **Wo müsste überprüft werden, ob der Client eine Berechtigung hat einen angefragten Service zu nutzen? (Steht nicht auf den Folien)**
-103. **WarumwerdeninKerberosValidityPeriodsbzw.Timestampsverwendet?Wielangeist ein Ticket üblicherweise gültig? Was wird dadurch erschwert?**
-104. **Nochmal: Welche Tickets werden in Kerberos verwendet und wozu? Womit sind sie verschlüsselt und was beinhalten sie?**
-105. **Was ist Credential Delegation?**
-106. **WiebezeichnetmandieTatsache,dassdasTGTindenlocalcachedesComputerweiter- geleitet wird, in den man sich remote einlogt? Welches Protokoll wird dafür verwendet?**
-107. **Wo kann Kerberos gut verwendet werden, wo nicht? Begünden Sie! Was sind Alterna- tiven?**
-108. **Nennen Sie 3 Nachteile von Kerberos!**
-109. **Nennen Sie 6 Schwachstellen von Kerberos!**
-110. **Wofür steht AFS? Was ist es?**
-111. **Nennen Sie 3 Arten von File Systems!**
-112. **Was ist das Ziel von AFS?**
-113. **Aus welcher Zeit stammt AFS?**
-114. **Erläutern Sie die AFS Struktur!**
-115. **Was bedeuten ACLs und Quota im Kontext von AFS?**
-116. **Was sind public bzw. private cells?**
-117. **Was ist im Wesentlichen ein AFS token?**
-118. **Wofür wird ein WSI-account im Fachbereich Informatik der Uni Tübingen verwendet?**
-119. **Wo werden Nutzerdaten gespeichert?**
-120. **Wofür wird Kerberos verwendet? Wie heißt das Realm?**
-121. **Was geschieht beim Einloggen in einen Computer?**
-122. **Was geschieht bei weitern remote logins in andere Rechner?**
-123. **Wofür wird OAuth2 verwendet?**
-124. **Was ist OAuth2 erstmal nicht (Verwechslungspotential)?**
-125. **Stellen Sie zwei Use Cases für OAuth2 kurz dar! Was ist der originäre Vorteil von OAuth2?**
-126. **WassindClient,ProtectedResources,ResourceServer,ResourceOwner,Authorization Server und Client Scopes im Kontext von OAuth2?**
-127. **Was ist der Client Registration Workflow? Wozu soll eine Client Registration dienen? Wie zuverlässig ist das? Unter welchen Umständen kann ein Client Secret sinnvoll ver- wendet werden?**
-128. **Wie funktioniert der Authorization Code Flow in OAuth2?**
-129. **WasisteinAccessToken?Wofürwirdesverwendet?Warummussesnichtverschlüsselt sein? Wie ist es aufgebaut/kodiert? (nur ungefähr)**
-130. **Wasisteinrefreshtoken?Wofürwirdesverwendet?WannbekommtesderClient?Wie lange ist es gültig?**
-131. **Wie wird das Access Token vom Client zum Resource Server typischerweise übertra- gen?**
-132. **Wie ginge es noch? Warum sollte das aber vermieden werden?**
-133. **Was ist HTTP Header Live?**
-134. **Wo kann man probehalber mit OAuth2 interagieren?**
-135. **Was sind Limitierungen von OAuth2? Begründen Sie!**
-136. **Erklären Sie wie PKCE gegen Weiterleitung von Access Tokens an ein falsches Ziel schützt!**
-137. **Wofür steht OIDC? Was ist OIDC? Wer standardisiert OIDC?**
-138. **Was ist die Relation zwischen OAuth2 und OIDC?**
-139. **Worin besteht die Erweiterung von OAuth2 zu OIDC?**
-140. **Wann sendet der OIDC server ("OAuth2 Autorization Server") ein ID Token?**
-141. **Was enthält es?**
-142. **Wofür wird es nicht verwendet?**
-143. **Was ist ein IdP?**
-144. **Erkläutern Sie den Unterschied zwischen Authentication und Authorization, wenn Sie sich mit Ihrer Apple-ID über den Browser Spotify nutzen wollen! Welche Rolle über- nimmt der Account Server von Spotify dabei im Kontext von OIDC?**
-145. **Welche open-source Implementierungen gibt es für OAuth und OIDC? Worauf sollte man achten?**
-146. **Wofür steht SAML? Wofür ist es gut? Wer hat es standardisiert?**
-147. **Welche Implementierungen unterstützen SAML2?**
+
+  Kerberos ist Hades' dreiköpfiger Hund, der den Eingang zur Unterwelt bewachte.
+
+78. **Welches Protokoll ist der theoretische Hintergrund von Kerberos (ohne es zu erklären)? Was ist sein Ziel? Was wird als Voraussetzung benötigt?**
+
+  Needham-Schroeder Protokoll
+
+80. **Rekapitulieren Sie die Verschlüsselungs- und Hash-Verfahren, die für Kerberos verwendet wurden!**
+81. **Nennen Sie 3 Kerberos-Implementierungen!**
+82. **Welche Basic Components gibt es in Kerberos? Was tun sie, bzw. woraus bestehen sie?**
+83. **Was speichert die Realm-DB?**
+84. **Wofür steht KDC? Welche Services unterstützt er?**
+85. **Was bedeuten AS und TGS? Was sind ihre Aufgaben?**
+86. **Was ist ein Ticket im Kontext von Kerberos?**
+87. **Wie werden Tickets in Kerberos verwendet? Nennen Sie zwei Varianten!**
+88. **Was sind Vorteile von Tickets?**
+89. **Welche pre-shared secrets benötigt Kerberos?**
+90. **Welche session keys verwendet Kerberos?**
+91. **Welche tickets verwendet Kerberos?**
+92. **Wie funktioniert der Login bei Kerberos?**
+93. **Was geschieht bei der Client Authentication?**
+94. **Warum wird der Client/TGS Session Key zweimal zum Client gesendet (einmal in 6 und einmal in 7)?**
+95. **Die Authentication bei Kerberos verlangt kein Challenge/Response. Worin besteht sie stattdessen?**
+96. **Wie erfolgt die Client/Service Authorization in Kerberos?**
+97. **Wie findet der TGS heraus, dass der Client ordnungsgemäß vom AS authentifiziert wur- de? Welchen Schlüssel muss der Client haben?**
+98. **Ist es tragisch, wenn das TGT gestohlen wird?**
+99. **Welche Infos sendet der TGS zum Client?**
+100. **Wie wird sichergestellt, dass nur der Client und der Server selber den Client/Server Key bekommt?**
+101. **Was sendet der Client beim Client Service Request in Kerberos an den Service Server?**
+102. **Wie überprüft der Service Server, ob der Client seinen Dienst verwenden darf?**
+103. **Wie authentifiziert sich der Service Server gegenüber dem Client?**
+104. **Wo müsste überprüft werden, ob der Client eine Berechtigung hat einen angefragten Service zu nutzen? (Steht nicht auf den Folien)**
+105. **WarumwerdeninKerberosValidityPeriodsbzw.Timestampsverwendet?Wielangeist ein Ticket üblicherweise gültig? Was wird dadurch erschwert?**
+106. **Nochmal: Welche Tickets werden in Kerberos verwendet und wozu? Womit sind sie verschlüsselt und was beinhalten sie?**
+107. **Was ist Credential Delegation?**
+108. **WiebezeichnetmandieTatsache,dassdasTGTindenlocalcachedesComputerweiter- geleitet wird, in den man sich remote einlogt? Welches Protokoll wird dafür verwendet?**
+109. **Wo kann Kerberos gut verwendet werden, wo nicht? Begünden Sie! Was sind Alterna- tiven?**
+110. **Nennen Sie 3 Nachteile von Kerberos!**
+111. **Nennen Sie 6 Schwachstellen von Kerberos!**
+112. **Wofür steht AFS? Was ist es?**
+113. **Nennen Sie 3 Arten von File Systems!**
+114. **Was ist das Ziel von AFS?**
+115. **Aus welcher Zeit stammt AFS?**
+116. **Erläutern Sie die AFS Struktur!**
+117. **Was bedeuten ACLs und Quota im Kontext von AFS?**
+118. **Was sind public bzw. private cells?**
+119. **Was ist im Wesentlichen ein AFS token?**
+120. **Wofür wird ein WSI-account im Fachbereich Informatik der Uni Tübingen verwendet?**
+121. **Wo werden Nutzerdaten gespeichert?**
+122. **Wofür wird Kerberos verwendet? Wie heißt das Realm?**
+123. **Was geschieht beim Einloggen in einen Computer?**
+124. **Was geschieht bei weitern remote logins in andere Rechner?**
+125. **Wofür wird OAuth2 verwendet?**
+126. **Was ist OAuth2 erstmal nicht (Verwechslungspotential)?**
+127. **Stellen Sie zwei Use Cases für OAuth2 kurz dar! Was ist der originäre Vorteil von OAuth2?**
+128. **WassindClient,ProtectedResources,ResourceServer,ResourceOwner,Authorization Server und Client Scopes im Kontext von OAuth2?**
+129. **Was ist der Client Registration Workflow? Wozu soll eine Client Registration dienen? Wie zuverlässig ist das? Unter welchen Umständen kann ein Client Secret sinnvoll ver- wendet werden?**
+130. **Wie funktioniert der Authorization Code Flow in OAuth2?**
+131. **WasisteinAccessToken?Wofürwirdesverwendet?Warummussesnichtverschlüsselt sein? Wie ist es aufgebaut/kodiert? (nur ungefähr)**
+132. **Wasisteinrefreshtoken?Wofürwirdesverwendet?WannbekommtesderClient?Wie lange ist es gültig?**
+133. **Wie wird das Access Token vom Client zum Resource Server typischerweise übertra- gen?**
+134. **Wie ginge es noch? Warum sollte das aber vermieden werden?**
+135. **Was ist HTTP Header Live?**
+136. **Wo kann man probehalber mit OAuth2 interagieren?**
+137. **Was sind Limitierungen von OAuth2? Begründen Sie!**
+138. **Erklären Sie wie PKCE gegen Weiterleitung von Access Tokens an ein falsches Ziel schützt!**
+139. **Wofür steht OIDC? Was ist OIDC? Wer standardisiert OIDC?**
+140. **Was ist die Relation zwischen OAuth2 und OIDC?**
+141. **Worin besteht die Erweiterung von OAuth2 zu OIDC?**
+142. **Wann sendet der OIDC server ("OAuth2 Autorization Server") ein ID Token?**
+143. **Was enthält es?**
+144. **Wofür wird es nicht verwendet?**
+145. **Was ist ein IdP?**
+146. **Erkläutern Sie den Unterschied zwischen Authentication und Authorization, wenn Sie sich mit Ihrer Apple-ID über den Browser Spotify nutzen wollen! Welche Rolle über- nimmt der Account Server von Spotify dabei im Kontext von OIDC?**
+147. **Welche open-source Implementierungen gibt es für OAuth und OIDC? Worauf sollte man achten?**
+148. **Wofür steht SAML? Wofür ist es gut? Wer hat es standardisiert?**
+149. **Welche Implementierungen unterstützen SAML2?**
 
 ## Kapitel 4: OAuth
 
