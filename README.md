@@ -7,28 +7,30 @@
   * AES: Advanced Encryption Standard
 * C:
   * CBC: Cipher Block Chaining Mode
-  * CCM: Counter Mode with CBC-MAC
   * CTR: Counter Mode
+    * CCM: Counter Mode with CBC-MAC
 * D:
   * DES: Data Encryption Standard
   * DH: Diffie-Hellman
-  * DLP: Diskretes Logarithmus Problem
+  * DLP: Discrete Logarithm Problem
+  * DoS: Denial of Service
+    * DDoS: Distributed Denial of Service
   * DNS: Domain Name System
     * DNSSEC: Domain Name System Security Extensions
   * DSA: Digital Signature Algorithm
 * E:
   * ECB: Electronic Codebook Mode
   * ECC: Elliptic Curve Cryptography
-  * ECDSA: Elliptic Curve Signature Algorithm
+    * ECDSA: Elliptic Curve Signature Algorithm
 * F:
   * FIPS: Federal Information Processing Standard
   * FTP: File Transfer Protocol
     * FTPS: File Transfer Protocol over TLS
 * G:
   * GCM: Galois Counter Mode
-  * GMAC: @TODO
 * I:
   * ID: Identity
+  * IV: Initialization Vector
 * J:
   * JWT: JSON Web Token
 * K:
@@ -38,11 +40,14 @@
   * OIDC: OpenID Connect
 * M:
   * MAC: Message Authentication Code
+    * CBC-MAC: Cipher Block Chaining Message Authentication Code
+    * GMAC: Galois Message Authentication Code
     * HMAC: Hashed Message Authentication Code
 * N:
   * NIST: National Institute of Standard and Technology
 * P:
   * PKCE: Proof Key for Code Exchange
+  * PKC: Public Key Cryptography
   * PKI: Public Key Infrastructure
   * PGP: Pretty Good Protection
     * GPG: GNU PGP
