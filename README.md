@@ -687,6 +687,8 @@
 
 5. **Wie funktioniert eine MITM attack, wenn nur Public Key (ohne Zertifikate) für Authentifizierung und Verschlüsselung angewendet werden?**
 
+    [![Challenge Response Authentication MITM](./challenge-response-mitm.png)](https://www.youtube.com/watch?v=5rT6fZUwhG8)
+
 6. **Fassen Sie wesentliche Eigenschaften asymmetrischer Kryptographie zusammen!**
 
     * basieren meistens auf dem diskreten Logarithmus Problem
