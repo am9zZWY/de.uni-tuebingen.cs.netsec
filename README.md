@@ -615,7 +615,7 @@
 
 98. **Vergleiche RSA Signaturen mit dem normalen RSA Algorithmus!**
 
-99.  **Warum darf $k$ im Kontext von DSA nie mehrfach verwendet werden?**
+99. **Warum darf $k$ im Kontext von DSA nie mehrfach verwendet werden?**
 
 100. **Wie funktioniert ElGamal?**
 
@@ -672,143 +672,296 @@
 ## Kapitel 3
 
 1. **Erklären Sie ein Problem, das beim Einsatz von digitalen Signaturen entstechen kann!**
+
+    Das Problem ist, dass andere den echten öffentlichen Schlüssel eines Kommunikationspartners nicht kennen.
+
 2. **Was ist challenge-response authentication?**
+
+    Bei der Challenge-Response Authentication sendet ein Kommunikationspartner, Alice an Bob, dem anderen eine _Challenge_. Die Challenge ist meistens eine Nonce, die Bob mit seinem privaten Schlüssel verschlüsselt. Alice entschlüsselt dann die verschlüsselte Nonce mithilfe von Bobs öffentlichem Schlüssel und kann damit feststellen, ob es sich damit wirklich um Bob handelt.
+
 3. **Was ist endpoint authentication?**
+
+    Endpoint Authentication ist ein Mechanismus, mit dem sichergestellt wird, dass sich nur authorisierte Geräte mit einem Netzwerk verbinden dürfen
+
 4. **Welche Problem kann mit pubic key authentication entstehen?**
+
 5. **Wie funktioniert eine MITM attack, wenn nur Public Key (ohne Zertifikate) für Authentifizierung und Verschlüsselung angewendet werden?**
+
 6. **Fassen Sie wesentliche Eigenschaften asymmetrischer Kryptographie zusammen!**
+
+    * basieren meistens auf dem diskreten Logarithmus Problem
+      * aus dem öffentlichen Schlüssel lässt sich der private Schlüssel nicht ausrechnen
+    * es gibt einen öffentlichen und einen privaten Schlüssel:
+      * öffentlicher Schlüssel zur Verschlüsselung
+      * privater Schlüssel zur Entschlüsselung
+
 7. **Was sind Anwendungen davon?**
+
 8. **Was enthält ein digitales Zertifikat?**
-9. **Warum werden vertrauenswürdige Certificate Authorities für digitale Zertifikate benö- tigt?**
+
+    * öffentlicher Schlüssel
+    * weitere Informationen über den Halter
+
+9. **Warum werden vertrauenswürdige Certificate Authorities für digitale Zertifikate benötigt?**
+
+    Vertrauenswürdige Certificate Authorities (CAs) garantieren, dass der öffentliche Schlüssel eines Kommunikationspartners authentisch ist.
+
 10. **Wie funktioniert die Ausstellung eines Zertifikats?**
+
+    Die Ausstellung erfolgt über den _Certificate Signing Request_:
+    @TODO
+
 11. **Was sind root bzw. intermediate certificates?**
+
+    * Root Zertifikate sind sogenannte _self-signed_ Zertifikate, mit denen Intermediate Zertifikate signiert werden
+    * Intermediate Zertifikate sind von Root Zertifikaten signiert und werden verwendet um weitere Intermediate Zertifikate oder Client Zertifikate zu signieren.
+
 12. **Wie kommt ein Zertifikat zum Ziel und wie wird es genutzt? sind root bzw. intermediate certificates?**
 13. **Was kann Vertrauen in eine CA validiert werden?**
+
 14. **Wie ist der verbreiteste Standard für Zertifikate?**
+
 15. **Was für Informationen enthält er typischerweise?**
+
 16. **Was ist eine PKI?**
+
 17. **Wo werden Zertifikate beispielsweise verwendet?**
+
 18. **Was muss geschehen, wenn der private key eines Zertifikats vor Ablaufzeit bekannt wird?**
+
 19. **Wie erhalten Benutzer den public key einer CA?**
+
 20. **Seit wann gibt es (ungefähr) X.509 Zertifikate?**
+
 21. **Was ist ein Common Name im Kontext von X.509?**
+
 22. **Was sind Alternative Names?**
+
 23. **Welche 3 Basic Types gibt es und wofür werden sie verwendet?**
+
 24. **Nennen Sie Beispiele für Client Certificates!**
+
 25. **Was sind Wildcard Certificates und wofür sind sie gut?**
+
 26. **Was für Namen decken sie ab?**
+
 27. **Nennen Sie 3 Certificate Validation Levels und erklären Sie diese!**
+
 28. **Erklären Sie die Certificate Request Procedure!**
+
 29. **Was ist ein CSR? Welchem Format folgt es typischerweise?**
+
 30. **Was ist eine CRL und wofür wird sie verwendet?**
+
 31. **Was sind Probleme beim Nutzen von CRLs?**
+
 32. **Was ist eine Certificate Chain?**
+
 33. **Wie kann die Vertrauenswürdigkeit eines Root Certificate überprüft werden?**
+
 34. **Wo finden sich Informationen über die Certificate Chain in Zertifikaten?**
+
 35. **Wie werden Certificate Chains verifiziert?**
+
 36. **Was ist cross-certification?**
+
 37. **Wofür ist cross-certification hilfreich?**
+
 38. **Schauen Sie sich Informationen über Zertifikate in Ihrem Browser an!**
+
 39. **Wofür steht OCSP? Wofür ist es hilfreich?**
+
 40. **Welche Probleme sind bei OCSP bekannt?**
+
 41. **Vergleichen Sie OCSP mit CRLs!**
+
 42. **Was sind Schwächen von X.509-Zertifikaten in der Praxis? Zählen Sie mindestens 4 auf und erklären Sie diese!**
+
 43. **Gab es in der Vergangenheit schon schwerwiegende Probleme mit CAs? Nennen Sie zwei Beispiele!**
+
 44. **Was bedeutet ACME? Welches Problem löst es?**
+
 45. **Nennen Sie 3 Beispiele, bei denen Ownership unterschiedlich nachgewiesen werden kann!**
+
 46. **Wo werden ACME client/server eingesetzt?**
+
 47. **Wofür wird der Private_account_key verwendet?**
+
 48. **Wofür verwendet der ACME-Server den Public_account_key?**
+
 49. **Wie funktioniert die ACME Web Challenge? Was wird durch sie nachgewiesen? Wofür wird sie verwendet?**
+
 50. **Wie funktioniert die ACME DNS Challenge? Was wird durch sie nachgewiesen? Wofür wird sie verwendet?**
+
 51. **Wie funktioniert die ACME Mail Challenge? Was wird durch sie nachgewiesen? Wofür wird sie verwendet?**
+
 52. **WasbedeutetCAAundwasbewirktes?Wiewirdestechnischumgesetzt?Wasbedeuten Issuewild und IODEF in dem Kontext?**
+
 53. **Seit 2017 ist die Implementierung von CAA verpflichtend. Für wen?**
+
 54. **Was ist ein Merkle Tree? Was ist der Vorteil eines Merkle Trees gegenüber naiven alter- nativen Ansätzen?**
+
 55. **Welches Problem versucht Certificate Transparency zu lösen?**
+
 56. **Was für Informationen werden durch Certificate Transparency offengelegt?**
+
 57. **Was sind Certificate Transparency logs und was tun sie?**
+
 58. **Was sind Certificate Transparency monitors und was tun sie?**
+
 59. **Was sind Certificate Transparency auditors und was tun sie?**
+
 60. **Wie helfen Merkle Trees dabei?**
+
 61. **Wie kann man Ansätze klassifizieren, die Vertrauen im Kontext Sicherheit aufbauen?**
+
 62. **Erklären Sie wie das Web of Trust funktioniert!**
+
 63. **Was ist in dem Kontext "Owner Trust"?**
+
 64. **Erklären Sie anhand CACert wie eine CA auf Prinzipien des WoT aufbebaut werden kann!**
+
 65. **Was sind Probleme eines solchen Ansatzes und wie hat sich dieser in der Praxis durch- gesetzt?**
+
 66. **Wofür steht PGP und wofür wird es eingesetzt? Was ist GPG? Was ist OpenPGP?**
+
 67. **Was ist ein Key Server?**
+
 68. **Was für public keys wird in PGP WoT vertraut?**
+
 69. **Warum hängt das Aussehen des WoT vom Betrachter ab?**
+
 70. **Was ist ein PGP Fingerprint? Welches Problem löst er? Wofür wird er verwendet?**
+
 71. **Was für Angriffen unterliegen fingerprints?**
+
 72. **Was für Probleme verbleiben mit fingerprints? Welches Problem wird durch fingerprints folglich nur gelöst?**
+
 73. **Was für Probleme verbleiben bei der Anwendung von PGP?**
 
 ## Kapitel 4
 
 1. **Wie funktioniert der gesamt Prozess für Authentication mittels Passwords?**
+
 2. **Was sind Probleme mit Passwords?**
+
 3. **Was versteht man unter Password Authentication?**
+
 4. **Was versteht man unter Challenge-Response Authentication?**
+
 5. **Was sind Vorteile davon?**
+
 6. **Was ist Session Hijacking?**
+
 7. **Was sind brute-force Angriffe gegen Passwörter und was kann man dagegen tun?**
+
 8. **Warum sollten keine Klartext-Passwords auf Servern gespeichert werden? Was ist eine Gegenmaßnahme?**
+
 9. **Was sind Rainbow Tables? Was ist eine Gegenmaßnahme?**
 10. **Warum ist es wichtig starke Passwörter zu verwenden? Erklären Sie, warum schwache Passwörter trotz salted hashes eine Gefahr darstellen!**
+
 11. **Ist häufiges Ändern eines kürzeren Passworts eine Alternative?**
+
 12. **Wofür steht PAP? Eklären Sie PAP!**
+
 13. **Was sind seine Probleme? Wie können sie teilweise behoben werden?**
+
 14. **Wofür steht CHAP? Erklären Sie CHAP!**
+
 15. **Wie schützt es gegen replay attacks? Welche zwei Eigenschaften machen CHAP ver- wundbar?**
+
 16. **Wofür steht CRAM-MD5? Erklären Sie CRAM-MD5!**
+
 17. **Nennen Sie 3 Vorteile und 2 Nachteile von CRAM-MD5!**
+
 18. **Wofür steht SCRAM? Erklären Sie SCRAM!**
+
 19. **Was ist ein wesentlicher Vorteil von SCRAM gegenüber CRAM-MD5?**
+
 20. **Warum sollte SCRAM nur mit TLS verwendet werden?**
+
 21. **Was sind zwei Schwachstellen von SCRAM?**
 22. **Wofür steht NTLM? Was für eine authentication protocol implementiert es?**
+
 23. **Was für Schwächen weist der LM-Hash auf?**
+
 24. **NTLM verwendet 128 bit lange hash values als Schlüssel für Athentifizierung. Warum gilt diese trotzdem unsicher?**
+
 25. **Wird NTLM noch empfohlen? Wird es noch eingesetzt? Warum?**
+
 26. **Wofür steht MS-CHAP? Erklären Sie MS-CHAP!**
 27. **Was ist ein Vorteil von MS-CHAP gegenüber normalem CHAP?**
+
 28. **Was sind verbleibende Nachteile von MS-CHAPv2?**
+
 29. **Wie funktioniert Public Key Authentication? Was Herausforderungen dabei?**
+
 30. **Wofür steht SASL? Was ist es? Was definiert es? Was sind seine Vorteile?**
+
 31. **Nennen Sie 3 authentication mechanisms, die von SASL unterstützt werden!**
+
 32. **Verwendet SASL diese Protokolle mit oder ohne Verschlüsselung?**
+
 33. **Nennen Sie 2 Anwendungen, die SASL verwenden!**
+
 34. **Wofür steht GSSAPI? Was ist es? Wie ist die Beziehung bzw. der Unterschied zwischen SASL und GSSAPI?**
+
 35. **Wofür steht MFA? Was bedeutet es?**
+
 36. **Was ist eine Anforderung an die verwendeten Credetials?**
+
 37. **Nennen Sie 4 Arten von Authentication Factors!**
+
 38. **Wofür steht OTP? Was bedeutet es?**
+
 39. **Nennen Sie 3 Implementierungsvarianten von OTP! Wofür wird es typischerweise ein- gesetzt?**
+
 40. **Wofür steht TOTP? Wie funktioniert es?**
+
 41. **WarummussmansichmitderEingabesolcherpwdsbeeilen?Wasgeschieht,wennman solche pwds schnell hintereinander berechnet?**
+
 42. **Was sind Challenge-Response OTPs?**
+
 43. **Wofür wird das Lamport Scheme verwendet? Wie funktioniert es? Welches Wissen be- nötigt der Client, um Passwörter zu erzeugen?**
+
 44. **In welcher Reihenfolge werden die Passwords generiert? Was wäre, wenn man die Rei- henfolge umdrehen würde?**
+
 45. **Wie werden Client und Server synchronisiert, so dass der Client as richtige Passwort senden kann?**
+
 46. **Was sind Vorteile des Lamport Schemes?**
+
 47. **Wofür steht U2F? Was wird darafu gespeichert?**
+
 48. **Wie funktioniert die Registrierung bei einem Server mit U2F?**
+
 49. **Wie funktionier die Authentication bei einem Server mit U2F?**
+
 50. **Was sind Vorteile von U2F gegenüber konventioneller Authentication mit Hilfe eines public/private Key Pairs?**
+
 51. **Welche Gefahr bestünde, wenn man den secret key eines U2F devices auslesen könnte?**
+
 52. **Wofür steht FIDO? Wer standardisiert FIDO? Was ist die Relation zwischen U2F und FIDO?**
+
 53. **Wofür steht CTAP? Was ist der Authenticator? Was ist die Relying Party?**
+
 54. **Wie funktioniert Registrierung mit FIDO2?**
+
 55. **Wie funktioniert Authentication mit FIDO2?**
+
 56. **Warum wird die URL bei FIDO2 mitsigniert?**
+
 57. **Wofür wird FIDO2 typischerweise verwendet?**
+
 58. **Warum ist es problematisch, wenn ein security stick verloren geht?**
+
 59. **Was ist notwendig, um in solchen Situationen Hife anbieten zu können?**
+
 60. **Was für eine Policy gibt es oftmals in Firmen bezüglich security sticks?**
+
 61. **Wofür steht IAM? Was sind seine Ziele?**
+
 62. **Nennen Sie zwei Implementierungen von IAM und grenzen Sie sie voneinander ab!**
+
 63. **Was ist Authorization?**
 
     Die Berechtung für einen Client bestimmte Aktionen durchführen zu dürfen.
