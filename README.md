@@ -444,6 +444,7 @@
 33. **Warum benötigt DES einen Key Schedule? Was macht er?**
 
     Mithilfe des Key Scheduling Algorithmus' wird der 64 Bit lange Schlüssel
+    @TODO
 
 34. **Was ist eine S-box? Was ist eine P-box?**
 
@@ -481,9 +482,15 @@
 
 47. **Was heißt ECB und wie funktioniert es? Was sind seine Probleme?**
 
+    ECB steht für Electronic Codebook.
+
 48. **Was heißt CBC und wie funktioniert es? Was sind seine Probleme?**
 
+    CBC steht für Cipher Block Chaining.
+
 49. **Was heißt CTR und wie funktioniert es? Was sind seine Probleme?**
+
+    CTR steht für **C**oun**T**e**R** Mode.
 
 50. **Was bedeutet synchronous im Kontext von ciphers? Geben Sie zwei Beispiele an!**
 
@@ -491,11 +498,11 @@
 
 52. **Was heißt OFB und wie funktioniert es? Was sind seine Probleme?**
 
-    Output Feedback Block
+    OFB steht für **O**utput **F**eedback **B**lock
 
 53. **Was heißt CFB und wie funktioniert es? Was sind seine Probleme?**
 
-    Cipher Feedback Block
+    CFB steht für **C**ipher **F**eedback **B**lock
 
 54. **Was ist eine Hash Funktion?**
 
@@ -597,6 +604,13 @@
 
 96. **Was ist ein Shared Secret? Wie bekommen beide Kommunikationspartner das Shared Secret?**
 
+    Ein Shared Secret (geteiltes Geheimnis) ist meist ein symmetrischer Schlüssel, mithilfe dessen die Kommunikation zwischen beiden Kommunikationspartner verschlüsselt wird.
+    Es gibt diverse Möglichkeiten das Shared Secret auszutauschen oder zu generieren:
+
+    * Diffie-Hellman Schlüsselaustausch
+    * ElGamal
+    * Verschlüsselung eines Shared Secrets mithilfe des öffentlichen Schlüssels des Kommunikationspartners
+
 97. **Was ist non-repudiation?**
 
 98. **Vergleiche RSA Signaturen mit dem normalen RSA Algorithmus!**
@@ -615,15 +629,19 @@
 
 101. **Wozu wird der Diffie-Hellman Schlüsseltausch verwendet?**
 
+    Um ein Shared Secret zwischen zwei Kommunikationspartnern auszutauschen.
+
 102. **Was hat Diffie-Hellman mit ElGamal zu tun?**
 
     Diffie-Hellmann und ElGamal beruhen beide auf dem Prinzip des _Shared Secrets_, das sich beide Parteien jeweils berechnen, und auf Operationen, die in einer Gruppe $G$ ausgeführt werden.
 
 103. **Was weiß ein Angreifer, der die gesamte Kommunikation eines Diffie-Hellmann Schlüsselaustausch mitgehört hat? Kann er damit das Shared Secret berechnen?**
 
+    Der Angreifer weiß nichts. @TODO
+
 104. **Definieren Sie Forward-secrecy! (Notwendig!)**
 
-    Forward secrecy
+    @TODO
 
 105. **Angenommen ein Angreifer hört die Kommunikation eines DH Schlüsseltauschs ab. Zu einem späteren Zeitpunkt nach dem Austausch findet der Angreifer die Private Keys für die verwendeten Signaturen heraus. Warum nützt ihm dies nichts?**
 
@@ -792,7 +810,15 @@
 61. **Wofür steht IAM? Was sind seine Ziele?**
 62. **Nennen Sie zwei Implementierungen von IAM und grenzen Sie sie voneinander ab!**
 63. **Was ist Authorization?**
+
+    Die Berechtung für einen Client bestimmte Aktionen durchführen zu dürfen.
+    Häufig erfolgt Authorization nach der Authentication: nach der Anmeldung auf Facebook kann man Freunde hinzufügen und entfernen
+    Andere Male ist keine Authentifizierung notwendig: beim kontaktlosen Bezahlen braucht man häufig nur die Karte. Es wird nicht überprüft, ob man wirklich der Kartenbesitzer ist.
+
 64. **Was ist Authentication?**
+
+    Die Identifizierung eines Clients.
+
 65. **Wofür steht RBAC? Was bedeutet es?**
 66. **Wofür steht ABAC? Was bedeutet es?**
 67. **Wie funktioniert IAM konzeptionell beim Einloggen?**
@@ -804,6 +830,9 @@
 73. **Wofür LDAP bzw. LDAPS? Wofür wird es verwendet? Nennen Sie Implementierungen davon!**
 74. **Was wird mit LDAP oftmals für Benutzer gespeichert?**
 75. **Was bedeuten DN, DC, OU und CN imm Kontext von LDAP?**
+
+### Kerberos
+
 76. **Was ist Kerberos in der griechischen Mytologie?**
 
   Kerberos ist Hades' dreiköpfiger Hund, der den Eingang zur Unterwelt bewachte.
@@ -857,15 +886,32 @@
 122. **Wofür wird Kerberos verwendet? Wie heißt das Realm?**
 123. **Was geschieht beim Einloggen in einen Computer?**
 124. **Was geschieht bei weitern remote logins in andere Rechner?**
+
+### OAuth2
+
 125. **Wofür wird OAuth2 verwendet?**
+
+    Zur Authorisierung von Anwendungen.
+
 126. **Was ist OAuth2 erstmal nicht (Verwechslungspotential)?**
+
+    Ein System zur Authentifizierung.
+
 127. **Stellen Sie zwei Use Cases für OAuth2 kurz dar! Was ist der originäre Vorteil von OAuth2?**
-128. **WassindClient,ProtectedResources,ResourceServer,ResourceOwner,Authorization Server und Client Scopes im Kontext von OAuth2?**
+128. **Was sind Client, Protected Resources, Resource Server, Resource Owner, Authorization Server und Client Scopes im Kontext von OAuth2?**
+
+    * Client: Die Anwendung, die Zugriff auf die Protected Resources haben möchte.
+    * Protected Resources: Bspw. Kontakte.
+    * Resource Server: Der Ort, an dem sich die Protected Resource befindet,
+    * Resource Owner: Bspw. man selbst, wenn es sich etwa um die eigenen Kontakte handelt.
+    * Authorization Server: Der Server, der den Client authorisiert auf die Resource zugreifen zu dürfen.
+    * Client Scopes: Die Berechtungen, die der Client in Bezug auf die Resources hat, wie etwa Lesen, Schreiben, Löschen, Teilen, etc.
+
 129. **Was ist der Client Registration Workflow? Wozu soll eine Client Registration dienen? Wie zuverlässig ist das? Unter welchen Umständen kann ein Client Secret sinnvoll ver- wendet werden?**
 130. **Wie funktioniert der Authorization Code Flow in OAuth2?**
-131. **WasisteinAccessToken?Wofürwirdesverwendet?Warummussesnichtverschlüsselt sein? Wie ist es aufgebaut/kodiert? (nur ungefähr)**
-132. **Wasisteinrefreshtoken?Wofürwirdesverwendet?WannbekommtesderClient?Wie lange ist es gültig?**
-133. **Wie wird das Access Token vom Client zum Resource Server typischerweise übertra- gen?**
+131. **Was ist ein Access Token? Wofür wird es verwendet? Warum muss es nicht verschlüsselt sein? Wie ist es aufgebaut/kodiert? (nur ungefähr)**
+132. **Was ist ein Refresh token? Wofür wird es verwendet? Wann bekommtes der Client? Wie lange ist es gültig?**
+133. **Wie wird das Access Token vom Client zum Resource Server typischerweise übertragen?**
 134. **Wie ginge es noch? Warum sollte das aber vermieden werden?**
 135. **Was ist HTTP Header Live?**
 136. **Wo kann man probehalber mit OAuth2 interagieren?**
