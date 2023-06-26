@@ -4,27 +4,28 @@ Table of Contents
 
 1. [Abbrevations](#abbrevations)
    1. [A](#a)
-   2. [C](#c)
-   3. [D](#d)
-   4. [E](#e)
-   5. [F](#f)
-   6. [G](#g)
-   7. [H](#h)
-   8. [I](#i)
-   9. [J](#j)
-   10. [K](#k)
-   11. [L](#l)
-   12. [O](#o)
-   13. [M](#m)
-   14. [N](#n)
-   15. [P](#p)
-   16. [R](#r)
-   17. [S](#s)
-   18. [T](#t)
-   19. [U](#u)
-   20. [V](#v)
-   21. [W](#w)
-   22. [Z](#z)
+   2. [B](#b)
+   3. [C](#c)
+   4. [D](#d)
+   5. [E](#e)
+   6. [F](#f)
+   7. [G](#g)
+   8. [H](#h)
+   9. [I](#i)
+   10. [J](#j)
+   11. [K](#k)
+   12. [L](#l)
+   13. [O](#o)
+   14. [M](#m)
+   15. [N](#n)
+   16. [P](#p)
+   17. [R](#r)
+   18. [S](#s)
+   19. [T](#t)
+   20. [U](#u)
+   21. [V](#v)
+   22. [W](#w)
+   23. [Z](#z)
 2. [Definitions](#definitions)
 3. [Links](#links)
    1. [Certificates](#certificates)
@@ -41,15 +42,22 @@ Table of Contents
 
 ### A
 
+* AAA: Authentication, Authorization, and Accounting
 * AAD: Associated Authenticated Data [Crypto]
-* AD: Active Directory [IAM]
-* Auth**N**: Authe**n**tication [Auth]
-* Auth**Z**: Authori**z**ation [Auth]
 * ACME: Automatic Certificcate Management Environment [Certificate]
+* AD: Active Directory [IAM]
 * AEAD: Authenticated Encryption with Associated Data [Crypto]
 * AES: Advanced Encryption Standard [Crypto]
+* AID: Application Identifier [Auth]
 * AH: Authentication Header [VPN]
 * ALPN: Application Layer Negotiation Protocol [TLS]
+* AP: Access Point [Wi-Fi]
+* Auth**N**: Authe**n**tication [Auth]
+* Auth**Z**: Authori**z**ation [Auth]
+
+### B
+
+* BSS: Basic Service Set [Wi-Fi]
 
 ### C
 
@@ -70,12 +78,16 @@ Table of Contents
 * DANE: DNS-based Authentication of Named Entities [TLS]
 * DES: Data Encryption Standard [Crypto]
 * DH: Diffie-Hellman [Crypto]
+* DLC: Data Link Control = Layer 2 [OSI]
 * DLP: Discrete Logarithm Problem [Crypto]
 * DNS: Domain Name System [TLS]
   * DNSSEC: Domain Name System Security Extensions [TLS]
 * DoH: DNS over HTTPS [TLS]
 * DoS: Denial of Service [Attack]
   * DDoS: Distributed Denial of Service [Attack]
+* DS: Delegation Signer [Certificate]
+* DS: Distribution System [Wi-Fi]
+  * WDS: Wireless Distribution System [Wi-Fi]
 * DSA: Digital Signature Algorithm [Crypto]
 * DTLS: Datagram Transport Layer Security [TLS]
 * DV: Domain-validated [Certificate]
@@ -83,12 +95,14 @@ Table of Contents
 ### E
 
 * EAP: Extensible Authentication Protocol [Auth]
+  * EAPoL: Extensible Authentication Protocol over LAN [Auth]
 * ECB: Electronic Codebook Mode [Crypto]
 * ECC: Elliptic Curve Cryptography [Crypto]
   * ECDH: Diffie-Hellman with Elliptic Curves [Crypto]
   * ECDSA: Elliptic Curve Signature Algorithm [Crypto]
 * ED25519: Edwards Curve 25519 [Crypto]
 * ESP: Encapsulating Security Payload [VPN]
+* ESS: Extended Service Set [Wi-Fi]
 * ETH: Ethernet
 * EV: Extended validation [Certificate]
 
@@ -141,8 +155,10 @@ Table of Contents
 ### L
 
 * LAN: Local Area Network
+  * WLAN: Wireless Local Area Network
 * LDAP: Lightweight Directory Access Protocol [IAM]
-* L1/L2/L3: Layer 1/2/3
+* LLC: Logical Link Control [OSI]
+* L1/L2/L3: Layer 1/2/3 [OSI]
 
 ### O
 
@@ -166,6 +182,7 @@ Table of Contents
     * CBC-MAC: Cipher Block Chaining Message Authentication Code
     * GMAC: Galois Message Authentication Code
     * HMAC: Hashed Message Authentication Code
+* MAC: Medium Access Control [OSI]
 * MFA: Multi-factor Authentication [Auth]
 * MIME: Multipurpose Internet Mail Extensions [Mail]
   * S/MIME: Secure Multipurpose Internet Mail Extensions
@@ -177,6 +194,7 @@ Table of Contents
 
 * NAT: Network Address Translation [VPN]
 * NIST: National Institute of Standard and Technology
+* NTP: Network Time Protocol
 
 ### P
 
@@ -185,11 +203,15 @@ Table of Contents
 * PFS: Perfect Forward Secrecy [Crypto]
 * PGP: Pretty Good Protection [WoT]
   * GPG: GNU Privacy Guard
+* PHY: Physical Layer = Layer 1 [OSI]
 * PKCE: Proof Key for Code Exchange
 * PKC: Public Key Cryptography [Crypto]
 * PKI: Public Key Infrastructure [Certificate]
+* PLCP: Physical Layer Convergence Protocol
+* PMD: Physical Medium Dependent
 * PPP: Point-to-Point Protocol
 * PRF: Pseudo Random Function
+* PSK: Pre-Shared Key
 
 ### R
 
@@ -220,9 +242,11 @@ Table of Contents
 * SP: Security Policy [IPSec]
   * SPD: Security Policy Database [IPSec]
 * SSH: Secure Shell
+* SSID: Service Set Identifier [Wi-Fi]
 * SSL: Secure Socket Layer [TLS]
   * TLS: Transport Layer Security
 * SSO: Single Sign-on
+* STA: Station [Wi-Fi]
 
 ### T
 
@@ -244,15 +268,18 @@ Table of Contents
 
 ### V
 
+* VLAN: Virtual Local Area Network
 * VPN: Virtual Private Network
 
 ### W
 
+* WDS: Wireless Distribution System [Wi-Fi]
 * WEP: Wired Equivalent Privacy [Auth]
 * Wi-Fi: Wireless Fidelity
 * WLAN: Wireless Local Area Network
 * WoT: Web of Trust
 * WPA: Wi-Fi Protected Access [Auth]
+  * WPA-PSK: WiFi Protected Setup Pre-Shared Key [Auth]
 * WPS: Wi-Fi Protected Setup [Auth]
 
 ### Z
