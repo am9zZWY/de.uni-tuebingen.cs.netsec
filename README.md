@@ -48,6 +48,7 @@ Table of Contents
 * AD: Active Directory [IAM]
 * AEAD: Authenticated Encryption with Associated Data [Crypto]
 * AES: Advanced Encryption Standard [Crypto]
+* AFS: Andrew File System [IAM]
 * AID: Application Identifier [Auth]
 * AH: Authentication Header [VPN]
 * ALPN: Application Layer Negotiation Protocol [TLS]
@@ -78,6 +79,7 @@ Table of Contents
 * DANE: DNS-based Authentication of Named Entities [TLS]
 * DES: Data Encryption Standard [Crypto]
 * DH: Diffie-Hellman [Crypto]
+* DHCP: Dynamic Host Configuration Protocol
 * DLC: Data Link Control = Layer 2 [OSI]
 * DLP: Discrete Logarithm Problem [Crypto]
 * DNS: Domain Name System [TLS]
@@ -122,6 +124,7 @@ Table of Contents
 
 ### H
 
+* HBAC: Host Based Access Control [IAM]
 * HMAC: Hashed Message Authentication Code [Crypto]
 * HOTP: HMAC-based One-Time Password [MFA]
 * HSTS: HTTP Strict Transport Security [TLS]
